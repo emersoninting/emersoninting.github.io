@@ -1,3 +1,12 @@
 # Hello!
-I am Emerson Inting, an Electronics Engineer specializing in Network and Security based on the Philippines!
-## test
+## I am an Electronics Engineer specializing in Network and Security based on the Philippines!
+
+
+# Technologies
+
+
+# My latest Achievements
+
+
+
+# My Certificates
