@@ -1,29 +1,72 @@
+/* Colors */
+:root {
+    --pearl: #FDFDFF;
+    --velvet: #800020;
+    --onyx: #353839;
+}
+
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--pearl);
+    color: var(--onyx);
 }
 
+/* Header Styles */
 header {
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--velvet);
+    color: var(--pearl);
     padding: 1em 0;
-    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-main {
-    padding: 2em;
-    text-align: center;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2em;
 }
 
+.site-title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5em;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--pearl);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--onyx);
+}
+
+/* Footer Styles */
 footer {
-    background-color: #222;
-    color: white;
+    background-color: var(--onyx);
+    color: var(--pearl);
     text-align: center;
     padding: 1em 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    position: relative;
 }
