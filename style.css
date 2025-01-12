@@ -37,6 +37,7 @@ header {
 .site-title {
     font-size: 1.5em;
     margin: 0;
+    font-weight: bold;
 }
 
 .nav-links {
@@ -44,7 +45,7 @@ header {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 1.5em;
+    gap: 2em;
 }
 
 .nav-links li {
