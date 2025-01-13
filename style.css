@@ -56,20 +56,12 @@ header {
 
 /* About Section */
 .about {
-    text-align: center;
     padding: 2em;
     background-color: var(--pearl);
 }
 
-.about h2 {
-    font-size: 2.5em;
-    color: var(--velvet);
-    margin-bottom: 1em;
-}
-
 .about-content {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 2em;
     max-width: 1000px;
@@ -81,6 +73,14 @@ header {
     font-size: 1.2em;
     line-height: 1.6;
     color: var(--onyx);
+    text-align: left; /* Align text to the left */
+}
+
+.about-content h2 {
+    font-size: 2.5em;
+    color: var(--velvet);
+    margin-bottom: 1em;
+    text-align: left; /* Align heading to the left */
 }
 
 .about-content .photo img {
@@ -110,6 +110,8 @@ header {
 
 .gallery-grid img {
     width: 100%;
+    height: 200px; /* Ensures consistent height */
+    object-fit: cover; /* Ensures images scale proportionally */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
