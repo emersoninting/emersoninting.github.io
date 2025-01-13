@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emerson Inting, ECE, ECT</title>
+    <title>Emerson Inting</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="header-container">
-            <h1 class="site-title">Emerson Inting</h1>
+            <h1 class="site-title">Emerson Inting, ECE, ECT</h1>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
@@ -58,35 +58,25 @@
     
     <!-- JavaScript Code -->
     <script>
+        // Get the photo stack container
         const photoStack = document.getElementById('photo-stack');
 
-        if (!photoStack) {
-            console.error('Photo stack container not found!');
-        } else {
-            photoStack.addEventListener('click', () => {
-                const images = Array.from(photoStack.querySelectorAll('.stack-image'));
-                
-                if (images.length === 0) {
-                    console.error('No images found with class "stack-image"!');
-                    return;
-                }
+        // Add click event listener to the photo stack
+        photoStack.addEventListener('click', () => {
+            // Get all images in the photo stack
+            const images = Array.from(photoStack.querySelectorAll('.stack-image'));
 
-                console.log('Images before reordering:', images.map(img => img.src));
+            // Move the last image to the front of the stack
+            const lastImage = images.pop(); // Take the last image
+            photoStack.insertBefore(lastImage, images[0]); // Move it to the front
 
-                // Move the first image to the end of the stack
-                const firstImage = images.shift();
-                photoStack.appendChild(firstImage);
-
-                // Reorder and restyle images
-                images.push(firstImage);
-                images.forEach((img, index) => {
-                    img.style.zIndex = images.length - index;
-                    img.style.transform = `translate(-${10 * (index + 1)}px, -${10 * (index + 1)}px)`;
-                });
-
-                console.log('Images after reordering:', images.map(img => img.src));
+            // Reorder and restyle images
+            images.unshift(lastImage); // Add the last image to the start of the array
+            images.forEach((img, index) => {
+                img.style.zIndex = images.length - index; // Set z-index for stacking
+                img.style.transform = `translate(${10 * (index + 1)}px, -${10 * (index + 1)}px)`; // Right-to-left stacking
             });
-        }
+        });
     </script>
     
 </body>
