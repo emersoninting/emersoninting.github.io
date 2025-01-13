@@ -98,6 +98,7 @@ header {
     margin: 0 auto; /* Center the photo stack */
 }
 
+/* General Image Styling */
 .photo-stack img {
     position: absolute;
     width: 100%;
@@ -105,39 +106,39 @@ header {
     object-fit: cover; /* Ensure the images fit properly */
     border-radius: 10px; /* Rounded corners for all images */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for a polished look */
-    transition: transform 0.5s ease, z-index 0.3s ease; /* Smooth transitions */
+    transition: opacity 0.5s ease, z-index 0.3s ease; /* Smooth transitions */
 }
 
 /* Initial Stacked Positions */
 .photo-stack img:nth-child(1) {
     z-index: 3;
     transform: translate(-10px, -10px); /* Offset for the first image */
+    opacity: 1; /* Make the first image visible by default */
 }
 
 .photo-stack img:nth-child(2) {
     z-index: 2;
     transform: translate(-20px, -20px); /* Offset for the second image */
+    opacity: 0; /* Hidden by default */
 }
 
 .photo-stack img:nth-child(3) {
     z-index: 1;
     transform: translate(-30px, -30px); /* Offset for the third image */
+    opacity: 0; /* Hidden by default */
 }
 
-/* Hover Effect: Bring Images to Front */
-.photo-stack:hover img:nth-child(1) {
+/* Hover Zones */
+.hover-layer-blue:hover {
     z-index: 4;
-    transform: translate(0, 0); /* Center the first image on hover */
+    opacity: 1; /* Show the second image when hovering over blue */
+    transform: translate(-20px, -20px); /* Keep position static */
 }
 
-.photo-stack:hover img:nth-child(2) {
+.hover-layer-yellow:hover {
     z-index: 5;
-    transform: translate(0, 0); /* Center the second image on hover */
-}
-
-.photo-stack:hover img:nth-child(3) {
-    z-index: 6;
-    transform: translate(0, 0); /* Center the third image on hover */
+    opacity: 1; /* Show the third image when hovering over yellow */
+    transform: translate(-30px, -30px); /* Keep position static */
 }
 
 
