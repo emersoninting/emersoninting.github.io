@@ -101,10 +101,17 @@ header {
 }
 
 /* Gallery Section */
+.gallery {
+    padding: 3em 2em; /* Increased padding around the gallery */
+    text-align: center;
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Always 4 items per row */
-    gap: 1em; /* Spacing between items */
+    gap: 2em; /* Increased spacing between items */
+    max-width: 1200px; /* Restrict the gallery width for more breathing room */
+    margin: 0 auto; /* Center the grid within the page */
 }
 
 .gallery-grid img {
