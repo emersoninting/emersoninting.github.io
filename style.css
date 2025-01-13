@@ -17,7 +17,6 @@ body {
     min-height: 100vh;
 }
 
-/* Header Styles */
 header {
     background-color: var(--velvet);
     color: var(--pearl);
@@ -25,7 +24,6 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -39,7 +37,6 @@ header {
 
 .site-title {
     font-size: 1.5em;
-    margin: 0;
     font-weight: bold;
 }
 
@@ -48,58 +45,80 @@ header {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 2em;
-}
-
-.nav-links li {
-    margin: 0;
+    gap: 1.5em;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--pearl);
     font-weight: bold;
-    transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--onyx);
-}
-
-/* Main Section Styles */
-main {
-    flex: 1;
-    padding: 2em;
+/* About Section */
+.about {
     text-align: center;
-}
-
-.intro {
-    max-width: 800px;
-    margin: 0 auto;
     padding: 2em;
     background-color: var(--pearl);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.intro h2 {
-    font-size: 2em;
+.about h2 {
+    font-size: 2.5em;
     color: var(--velvet);
     margin-bottom: 1em;
 }
 
-.intro .description {
-    font-size: 1em;
-    color: var(--onyx);
-    line-height: 1.6;
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
+.about-content .text {
+    flex: 1;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: var(--onyx);
+}
 
-/* Footer Styles */
+.about-content .photo img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 2em;
+    text-align: center;
+}
+
+.gallery h3 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: var(--velvet);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
 footer {
     background-color: var(--onyx);
     color: var(--pearl);
     text-align: center;
     padding: 1em 0;
-    margin-top: auto; /* Pushes the footer to the bottom if content is short */
 }
+
