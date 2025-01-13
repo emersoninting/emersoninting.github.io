@@ -58,25 +58,18 @@
     
     <!-- JavaScript Code -->
     <script>
-        // Get the photo stack container
-        const photoStack = document.getElementById('photo-stack');
-
-        // Add click event listener to the photo stack
-        photoStack.addEventListener('click', () => {
-            // Get all images in the photo stack
+        document.getElementById('photo-stack').addEventListener('click', () => {
+            const photoStack = document.getElementById('photo-stack');
             const images = Array.from(photoStack.querySelectorAll('.stack-image'));
-
-            // Move the first image to the end of the stack
             const firstImage = images.shift();
             photoStack.appendChild(firstImage);
-
-            // Update z-index and transform for all images
-            images.push(firstImage); // Re-add the first image at the end
+            images.push(firstImage);
             images.forEach((img, index) => {
-                img.style.zIndex = images.length - index; // Reverse stacking order
+                img.style.zIndex = images.length - index;
                 img.style.transform = `translate(-${10 * (index + 1)}px, -${10 * (index + 1)}px)`;
             });
         });
     </script>
+    
 </body>
 </html>
