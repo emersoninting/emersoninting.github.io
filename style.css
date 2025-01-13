@@ -14,7 +14,7 @@ body {
     color: var(--onyx);
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures the page takes at least the full height of the viewport */
+    min-height: 100vh;
 }
 
 /* Header Styles */
@@ -65,6 +65,35 @@ header {
 .nav-links a:hover {
     color: var(--onyx);
 }
+
+/* Main Section Styles */
+main {
+    flex: 1;
+    padding: 2em;
+    text-align: center;
+}
+
+.intro {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: var(--pearl);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.intro h2 {
+    font-size: 2em;
+    color: var(--velvet);
+    margin-bottom: 1em;
+}
+
+.intro .description {
+    font-size: 1em;
+    color: var(--onyx);
+    line-height: 1.6;
+}
+
 
 /* Footer Styles */
 footer {
