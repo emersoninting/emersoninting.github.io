@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emerson Inting</title>
+    <title>Emerson Inting, ECE, ECT</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
                         This platform serves three fundamental purposes. Firstly, it acts as a journal of my learning journey. Secondly, it serves as a life blog, a reflection of my personal experiences, challenges, and triumphs. And lastly, this space is devoted to my wild thoughts and ideas. It’s a canvas where I can freely express my creativity and innovative thinking.
                     </p>
                 </div>
-                <div class="photo-stack">
+                <div class="photo-stack" id="photo-stack">
                     <img src="gitpix/Emerson.jpg" alt="Photo 1" class="stack-image">
                     <img src="gitpix/Emerson2.jpg" alt="Photo 2" class="stack-image">
                     <img src="gitpix/Emerson3.jpg" alt="Photo 3" class="stack-image">
@@ -58,17 +58,35 @@
     
     <!-- JavaScript Code -->
     <script>
-        document.getElementById('photo-stack').addEventListener('click', () => {
-            const photoStack = document.getElementById('photo-stack');
-            const images = Array.from(photoStack.querySelectorAll('.stack-image'));
-            const firstImage = images.shift();
-            photoStack.appendChild(firstImage);
-            images.push(firstImage);
-            images.forEach((img, index) => {
-                img.style.zIndex = images.length - index;
-                img.style.transform = `translate(-${10 * (index + 1)}px, -${10 * (index + 1)}px)`;
+        const photoStack = document.getElementById('photo-stack');
+
+        if (!photoStack) {
+            console.error('Photo stack container not found!');
+        } else {
+            photoStack.addEventListener('click', () => {
+                const images = Array.from(photoStack.querySelectorAll('.stack-image'));
+                
+                if (images.length === 0) {
+                    console.error('No images found with class "stack-image"!');
+                    return;
+                }
+
+                console.log('Images before reordering:', images.map(img => img.src));
+
+                // Move the first image to the end of the stack
+                const firstImage = images.shift();
+                photoStack.appendChild(firstImage);
+
+                // Reorder and restyle images
+                images.push(firstImage);
+                images.forEach((img, index) => {
+                    img.style.zIndex = images.length - index;
+                    img.style.transform = `translate(-${10 * (index + 1)}px, -${10 * (index + 1)}px)`;
+                });
+
+                console.log('Images after reordering:', images.map(img => img.src));
             });
-        });
+        }
     </script>
     
 </body>
