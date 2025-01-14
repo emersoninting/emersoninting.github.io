@@ -167,41 +167,39 @@ footer {
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
-/* General Styles for About Page */
-.about {
-    padding: 2em;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
+/* General Styles for About Content */
 .about-content {
     display: flex;
     align-items: center;
-    gap: 2em;
+    gap: 2em; /* Space between the photo and text */
     margin-bottom: 2em;
 }
 
+/* Reverse the layout for the second section */
 .about-content.reverse {
-    flex-direction: row-reverse; /* Reverse layout for photo on the right */
+    flex-direction: row-reverse; /* Photo on the right */
 }
 
+/* Styling for the photo */
 .about-content .photo {
-    flex: 1;
+    flex: 1; /* Allocate space for the photo */
 }
 
 .about-content .photo img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
 }
 
+/* Styling for the text */
 .about-content .text {
-    flex: 2;
+    flex: 2; /* Allocate more space for the text */
     font-size: 1.2em;
     line-height: 1.6;
     color: var(--onyx);
 }
+
 
 /* Divider Line */
 .divider {
