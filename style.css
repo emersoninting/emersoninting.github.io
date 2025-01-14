@@ -306,3 +306,83 @@ footer {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* ------------------------------------------------------------------ Project Page --------------------------------------------------*/
+/* Hero Section */
+.projects-hero {
+    text-align: center;
+    padding: 2em;
+    background-color: var(--velvet);
+    color: var(--pearl);
+}
+
+.projects-hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.projects-hero p {
+    font-size: 1.2em;
+}
+
+/* Projects Gallery */
+.projects-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    padding: 2em;
+    background-color: var(--pearl);
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 1em;
+    text-align: center;
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.project-card h3 {
+    margin: 1em 0 0.5em;
+    color: var(--velvet);
+}
+
+.project-card p {
+    font-size: 1em;
+    margin-bottom: 1em;
+    color: var(--onyx);
+}
+
+.project-card a {
+    text-decoration: none;
+    color: var(--pearl);
+    background-color: var(--velvet);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-card a:hover {
+    background-color: #a81c3f; /* Slightly lighter velvet */
+}
+
+/* Call to Action Section */
+.cta {
+    text-align: center;
+    padding: 2em;
+    background-color: var(--onyx);
+    color: var(--pearl);
+}
+
+.cta a {
+    color: var(--velvet);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
