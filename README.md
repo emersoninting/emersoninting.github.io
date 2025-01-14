@@ -1,14 +1,8 @@
-# Hello!
-I am an Electronics Engineer specializing in Network and Security based on the Philippines!
+------------------------------------------------------------------
+Steps to Add More Certifications
 
-
-# Technologies
-![Python](/gitpix/Python-logo-notext.svg.png)
-
-# Work Experience
-
-
-# Portfolio
-
-
-# My Certificates
+1. Duplicate a certification-card block in the certification.html.
+2. Update:
+    src for the vendor logo and badge images.
+    href for the badge link.
+------------------------------------------------------------------
