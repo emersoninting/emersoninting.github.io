@@ -310,19 +310,33 @@ footer {
 /* Hero Section */
 .projects-hero {
     text-align: center;
-    padding: 2em;
-    background-color: var(--velvet);
-    color: var(--pearl);
+    padding: 3em 2em;
+    background: linear-gradient(to right, #800020, #a81c3f); /* Gradient background */
+    color: var(--pearl); /* Light text for contrast */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-hero .hero-content {
+    max-width: 800px; /* Restrict width for better readability */
+    margin: 0 auto;
 }
 
 .projects-hero h2 {
-    font-size: 2.5em;
+    font-size: 3em; /* Larger font size */
     margin-bottom: 0.5em;
+    font-weight: bold;
 }
 
 .projects-hero p {
     font-size: 1.2em;
+    font-weight: 300;
+    margin-bottom: 1em;
+    line-height: 1.6;
 }
+
 
 /* Projects Gallery */
 .projects-gallery {
