@@ -354,46 +354,58 @@ footer {
 
 
 
-/* Projects Gallery */
+/* Projects Gallery Section */
 .projects-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2em;
-    padding: 2em;
-    background-color: var(--pearl);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure flexibility across screen sizes */
+    gap: 2.5em; /* Increased spacing between items */
+    padding: 3em 2em; /* Add more padding around the gallery */
+    max-width: 1200px; /* Restrict the maximum width of the grid */
+    margin: 0 auto; /* Center the grid */
+    background-color: var(--pearl); /* Background for better contrast */
 }
 
+/* Individual Project Cards */
 .project-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 1em;
+    background: #fff; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    padding: 2em; /* Add padding inside the card */
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lift the card slightly */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
 
 .project-card img {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
+    height: 150px; /* Consistent image height */
+    object-fit: cover; /* Ensure images maintain aspect ratio */
+    margin-bottom: 1em; /* Space below the image */
+    border-radius: 8px; /* Slightly rounded corners for images */
 }
 
 .project-card h3 {
-    margin: 1em 0 0.5em;
+    font-size: 1.5em; /* Larger, more legible title */
     color: var(--velvet);
+    margin-bottom: 0.5em;
 }
 
 .project-card p {
     font-size: 1em;
-    margin-bottom: 1em;
     color: var(--onyx);
+    line-height: 1.5;
+    margin-bottom: 1em;
 }
 
 .project-card a {
     text-decoration: none;
     color: var(--pearl);
     background-color: var(--velvet);
-    padding: 0.5em 1em;
+    padding: 0.8em 1.5em; /* Larger button for better visibility */
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
@@ -401,6 +413,12 @@ footer {
 .project-card a:hover {
     background-color: #a81c3f; /* Slightly lighter velvet */
 }
+
+/* Add Breathing Room Above and Below the Section */
+.projects-hero + .projects-gallery {
+    margin-top: 2em; /* Space below the hero section */
+}
+
 
 /* Call to Action Section */
 .cta {
