@@ -167,8 +167,8 @@ footer {
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
-/* General Styles for About Content */
-.about-content {
+/* General Styles for About Page Content */
+.aboutpage-content {
     display: flex;
     align-items: center;
     gap: 2em; /* Space between the photo and text */
@@ -177,19 +177,19 @@ footer {
 }
 
 /* Reverse the layout for the second section */
-.about-content.reverse {
+.aboutpage-content.reverse {
     flex-direction: row-reverse; /* Photo on the right */
 }
 
 /* Styling for the photo */
-.about-content .photo {
+.aboutpage-content .photo {
     flex: 1; /* Allocate space for the photo */
     display: flex; /* Ensures proper alignment of the image */
     justify-content: center; /* Centers the image horizontally */
     align-items: center; /* Centers the image vertically */
 }
 
-.about-content .photo img {
+.aboutpage-content .photo img {
     max-width: 100%; /* Ensure the image does not exceed its container */
     max-height: 300px; /* Restrict the image height to avoid oversized images */
     height: auto; /* Maintain the image's aspect ratio */
@@ -199,14 +199,13 @@ footer {
 }
 
 /* Styling for the text */
-.about-content .text {
+.aboutpage-content .text {
     flex: 2; /* Allocate more space for the text */
     font-size: 1.2em;
     line-height: 1.6;
     color: var(--onyx);
     text-align: justify; /* Makes the text look cleaner */
 }
-
 
 /* Divider Line */
 .divider {
