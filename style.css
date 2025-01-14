@@ -53,7 +53,7 @@ header {
     color: var(--pearl);
     font-weight: bold;
 }
-
+/* Testing this section might be a giving conflict to the about page -------------------------------
 /* About Section */
 .about {
     padding: 2em;
@@ -89,7 +89,7 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
+ ------------------------------------------------------------------------------------- End */
 /* Photo Stack Section */
 .photo-stack {
     position: relative;
