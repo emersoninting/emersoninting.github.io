@@ -381,13 +381,16 @@ footer {
 }
 
 .project-card img {
-    width: 100%; /* Ensures the image fits the card's width */
-    height: 180px; /* Fixed height for consistent sizing */
-    object-fit: cover; /* Ensures images maintain aspect ratio without distortion */
-    margin-bottom: 1em; /* Space below the image */
-    border-radius: 8px; /* Slightly rounded corners for a polished look */
+    width: 100%; /* Full width of the container */
+    height: 150px; /* Smaller fixed height to avoid excessive cropping */
+    object-fit: contain; /* Ensures the entire image fits within the area without cropping */
+    margin-bottom: 1em; /* Adds space below the image */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f8f8f8; /* Light background to fill empty space (if any) */
+    padding: 5px; /* Add slight padding for better balance */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
+
 
 
 .project-card h3 {
