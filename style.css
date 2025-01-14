@@ -307,25 +307,40 @@ footer {
 }
 
 /* ------------------------------------------------------------------ Project Page --------------------------------------------------*/
-/* Hero Section */
+/* Hero Section with Background Image */
 .projects-hero {
     text-align: center;
     padding: 3em 2em;
-    background: linear-gradient(to right, #800020, #a81c3f); /* Gradient background */
-    color: var(--pearl); /* Light text for contrast */
+    background: url('gitpix/hero-background.jpg') no-repeat center center; /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire section */
+    color: var(--pearl); /* Text remains light for contrast */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative; /* For overlay */
+}
+
+.projects-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance text readability */
+    z-index: 1;
 }
 
 .projects-hero .hero-content {
+    position: relative; /* Brings content above the overlay */
+    z-index: 2;
     max-width: 800px; /* Restrict width for better readability */
     margin: 0 auto;
 }
 
 .projects-hero h2 {
-    font-size: 3em; /* Larger font size */
+    font-size: 3em; /* Large, bold font */
     margin-bottom: 0.5em;
     font-weight: bold;
 }
@@ -336,6 +351,7 @@ footer {
     margin-bottom: 1em;
     line-height: 1.6;
 }
+
 
 
 /* Projects Gallery */
