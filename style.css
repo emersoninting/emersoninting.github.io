@@ -126,7 +126,6 @@ header {
 }
 
 
-
 /* Divider Line */
 .divider {
     border: none;
@@ -165,5 +164,54 @@ footer {
     color: var(--pearl);
     text-align: center;
     padding: 1em 0;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+/* General Styles for About Page */
+.about {
+    padding: 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+.about-content.reverse {
+    flex-direction: row-reverse; /* Reverse layout for photo on the right */
+}
+
+.about-content .photo {
+    flex: 1;
+}
+
+.about-content .photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-content .text {
+    flex: 2;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: var(--onyx);
+}
+
+/* Divider Line */
+.divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #800020, #FDFDFF, #800020); /* Velvet to Pearl gradient */
+    margin: 2em 0;
+    width: 80%; /* Adjust width */
+    border-radius: 10px; /* Rounded edges */
+    margin-left: auto;
+    margin-right: auto;
 }
 
