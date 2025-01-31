@@ -72,5 +72,31 @@
         <p>© 2025 Emerson Inting</p>
     </footer>
 
+    <!-- JavaScript Code -->
+<script>
+    // Open Lightbox
+    function openLightbox(imgElement) {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxCaption = document.getElementById("lightbox-caption");
+
+        // Set the lightbox image and caption
+        lightboxImg.src = imgElement.src;
+        lightboxCaption.innerText = imgElement.alt;
+
+        // Show the lightbox
+        lightbox.style.opacity = "1";
+        lightbox.style.visibility = "visible";
+    }
+
+    // Close Lightbox
+    function closeLightbox() {
+        const lightbox = document.getElementById("lightbox");
+        lightbox.style.opacity = "0";
+        lightbox.style.visibility = "hidden";
+    }
+</script>
+
+    
 </body>
 </html>
