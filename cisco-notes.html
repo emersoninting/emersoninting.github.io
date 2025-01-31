@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco Notes | Emerson Inting</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to main CSS -->
+    <script src="script.js" defer></script> <!-- JavaScript for Lightbox -->
+</head>
+<body>
+
+    <!-- Include the Shared Header -->
+    <header>
+        <div class="header-container">
+            <h1 class="site-title">Emerson Inting</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cisco Notes Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Cisco Notes (CML)</h2>
+            <p>A collection of my networking notes, labs, and configurations using Cisco Modeling Labs (CML).</p>
+        </div>
+    </section>
+
+    <!-- Cisco Notes Gallery -->
+    <section class="cisco-gallery">
+        <h3>My Cisco Lab Notes</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="gitpix/cisco-lab1.jpg" alt="Basic Router Configuration" onclick="openLightbox(this)">
+                <p>Basic Router Configuration</p>
+            </div>
+            <div class="gallery-item">
+                <img src="gitpix/cisco-lab2.jpg" alt="OSPF Setup" onclick="openLightbox(this)">
+                <p>OSPF Setup</p>
+            </div>
+            <div class="gallery-item">
+                <img src="gitpix/cisco-lab3.jpg" alt="BGP Peering" onclick="openLightbox(this)">
+                <p>BGP Peering</p>
+            </div>
+            <div class="gallery-item">
+                <img src="gitpix/cisco-lab4.jpg" alt="VPN Configuration" onclick="openLightbox(this)">
+                <p>VPN Configuration</p>
+            </div>
+            <div class="gallery-item">
+                <img src="gitpix/cisco-lab5.jpg" alt="Access Control Lists" onclick="openLightbox(this)">
+                <p>Access Control Lists</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox for Viewing Images -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightbox-img">
+        <p id="lightbox-caption"></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Emerson Inting</p>
+    </footer>
+
+</body>
+</html>
