@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco Notes | Emerson Inting</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to main CSS -->
+    <script src="script.js" defer></script> <!-- JavaScript for Lightbox -->
+</head>
+<body>
+
+    <!-- Include the Shared Header -->
+    <header>
+        <div class="header-container">
+            <h1 class="site-title">Emerson Inting</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="Certificates.html">Certifications</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cisco Notes Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Cisco Notes (CML)</h2>
+            <p>A collection of my networking notes, labs, and configurations using Cisco Modeling Labs (CML).</p>
+        </div>
+    </section>
+
+    <!-- Cisco Notes Gallery -->
+    <section class="cisco-gallery">
+        <h3>My Cisco Lab Notes</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="gitpix/CiscoNotes/1.2.7.jpg" alt="Laboratory 1" onclick="openLightbox(this)">
+                <p>Packet Tracer - Connect a Network Based on a Network Diagram</p>
+            <a href="https://drive.google.com/file/d/1AZMyNsIh9ezJH3zyQqMrmIj-9QymKMZs/view?usp=drive_link" target="_blank">View Note</a>
+            </div>
+            <div class="gallery-item">
+                <img src="gitpix/CiscoNotes/1.2.12.jpg" alt="Laboratory 2" onclick="openLightbox(this)">
+                <p>Packet Tracer - Use CDP to Map a Network</p>
+            <a href="https://drive.google.com/file/d/1bXVONzoelCRC3r7TPPr1JAxUIdNsAj4A/view?usp=drive_link" target="_blank">View Note</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox for Viewing Images -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightbox-img">
+        <p id="lightbox-caption"></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Emerson Inting</p>
+    </footer>
+
+    <!-- JavaScript Code -->
+<script>
+    // Open Lightbox
+    function openLightbox(imgElement) {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxCaption = document.getElementById("lightbox-caption");
+
+        // Set the lightbox image and caption
+        lightboxImg.src = imgElement.src;
+        lightboxCaption.innerText = imgElement.alt;
+
+        // Show the lightbox
+        lightbox.style.opacity = "1";
+        lightbox.style.visibility = "visible";
+    }
+
+    // Close Lightbox
+    function closeLightbox() {
+        const lightbox = document.getElementById("lightbox");
+        lightbox.style.opacity = "0";
+        lightbox.style.visibility = "hidden";
+    }
+</script>
+
+    
+</body>
+</html>
