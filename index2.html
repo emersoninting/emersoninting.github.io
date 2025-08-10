@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emerson Inting — Network & Security Engineer</title>
+  <meta name="description" content="Network & Security engineer portfolio. Projects, certifications, notes, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#0f172a; --muted:#475569; --line:#e2e8f0; --card:#f8fafc; --accent:#0ea5e9;
+      --chip:#eef2ff; --chip-fg:#4f46e5;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b1220; --fg:#e5e7eb; --muted:#94a3b8; --line:#1f2937; --card:#0f172a; --accent:#38bdf8; --chip:#111827; --chip-fg:#93c5fd; }
+    }
+    html,body{height:100%}
+    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--fg); line-height:1.6}
+    .container{max-width:1100px; margin:0 auto; padding:0 1.25rem}
+    /* Skip link */
+    .skip{position:absolute; left:-9999px}
+    .skip:focus{left:1rem; top:1rem; background:var(--card); padding:.5rem .75rem; border:1px solid var(--line); border-radius:.5rem}
+    /* Navbar */
+    .nav{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:color-mix(in srgb, var(--bg) 85%, transparent); border-bottom:1px solid var(--line); z-index:10}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{font-weight:700; letter-spacing:.2px}
+    .nav a{color:var(--muted); text-decoration:none; font-weight:500; margin-left:1rem}
+    .nav a:hover{color:var(--fg)}
+    /* Sections */
+    section{padding:72px 0; border-bottom:1px solid var(--line)}
+    h1,h2{line-height:1.2}
+    h1{font-size:clamp(1.75rem, 2.5vw + 1rem, 2.6rem); margin:.25rem 0 .75rem}
+    h2{font-size:1.6rem; margin:0 0 1rem}
+    p.lead{font-size:1.05rem; color:var(--muted); max-width:60ch}
+    /* Hero */
+    .hero{display:grid; grid-template-columns:96px 1fr; gap:1.25rem; align-items:center}
+    .avatar{width:96px; height:96px; border-radius:50%; background:var(--line) center/cover no-repeat}
+    .cta{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem}
+    .btn{display:inline-block; padding:.6rem .95rem; border:1px solid var(--line); border-radius:.6rem; text-decoration:none; color:var(--fg); background:var(--card)}
+    .btn.primary{background:var(--fg); color:var(--bg)}
+    .btn:hover{transform:translateY(-1px)}
+    /* Cards */
+    .grid{display:grid; gap:1rem}
+    .grid.projects{grid-template-columns:repeat(auto-fit, minmax(280px, 1fr))}
+    .card{border:1px solid var(--line); border-radius:.9rem; background:var(--card); padding:1rem}
+    .card h3{margin:.25rem 0 .25rem; font-size:1.05rem}
+    .meta{color:var(--muted); font-size:.95rem}
+    .thumb{height:140px; background:var(--line) center/cover no-repeat; border-radius:.6rem}
+    .row{display:flex; flex-wrap:wrap; gap:.75rem}
+    .chip{background:var(--chip); color:var(--chip-fg); border:1px solid var(--line); padding:.35rem .6rem; border-radius:999px; font-size:.9rem}
+    /* Footer */
+    footer{padding:56px 0; color:var(--muted)}
+    footer a{color:inherit}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <div class="brand">Emerson Inting</div>
+      <nav aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certificates</a>
+        <a href="#notes">Notes</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- HERO -->
+    <section aria-labelledby="hero-title">
+      <div class="hero">
+        <!-- Replace background-image with your avatar path e.g. gitpix/Emerson3.jpg -->
+        <div class="avatar" style="background-image:url('gitpix/Emerson3.jpg');"></div>
+        <div>
+          <h1 id="hero-title">Hello, I’m Emerson — Network & Security Engineer</h1>
+          <p class="lead">I design secure, resilient networks and automate the boring work. Currently pursuing <strong>CCNP Security</strong>. Explore selected projects, certifications, and field notes below.</p>
+          <div class="cta">
+            <a class="btn primary" href="#projects">View Projects →</a>
+            <a class="btn" href="Emerson-Inting-CV.pdf">Download CV</a>
+            <a class="btn" href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Featured Projects</h2>
+      <div class="grid projects">
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="thumb" style="background-image:url('gitpix/Project/Network Support And Security.jpg');" role="img" aria-label="Network Support and Security project thumbnail"></div>
+          <h3>Network Support & Security Lab</h3>
+          <p class="meta">Cisco/Fortinet lab topology with VLANs, VPNs, BGP and logging. <a href="projects.html#net-sec">View details →</a></p>
+          <div class="row">
+            <span class="chip">Fortinet</span><span class="chip">Cisco</span><span class="chip">BGP</span>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="thumb" style="background-image:url('gitpix/Project/ITSecFoundation-Core.jpg');" role="img" aria-label="IT Security Foundation project thumbnail"></div>
+          <h3>IT Security Foundation</h3>
+          <p class="meta">Hands‑on notes and demos: hardening, auth, SIEM basics. <a href="ITSecFoundation.html">Read more →</a></p>
+          <div class="row">
+            <span class="chip">Baseline</span><span class="chip">Hardening</span><span class="chip">SIEM</span>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="card">
+          <div class="thumb" style="background-image:url('gitpix/Project/CiscoCML.jpg');" role="img" aria-label="Cisco notes thumbnail"></div>
+          <h3>Cisco Notes</h3>
+          <p class="meta">Concise study notes for routing, switching, and security. <a href="cisco-notes.html">Browse notes →</a></p>
+          <div class="row">
+            <span class="chip">OSPF</span><span class="chip">IPsec</span><span class="chip">NAT</span>
+          </div>
+        </article>
+      </div>
+      <p style="margin-top:1rem"><a href="projects.html">See all projects →</a></p>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certs" aria-labelledby="certs-title">
+      <h2 id="certs-title">Certifications</h2>
+      <div class="row">
+        <!-- Replace with actual badges/images or compact links -->
+        <a class="btn" href="Certificates.html#fortinet">Fortinet NSE</a>
+        <a class="btn" href="Certificates.html#microsoft">Microsoft</a>
+        <a class="btn" href="Certificates.html#cisco">Cisco</a>
+        <a class="btn" href="Certificates.html">See all →</a>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section id="notes" aria-labelledby="notes-title">
+      <h2 id="notes-title">Latest Notes</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+        <a class="card" href="NetSupSec.html"><strong>Network Support & Security</strong><br><span class="meta">Summaries & diagrams</span></a>
+        <a class="card" href="cisco-notes.html"><strong>Cisco Notes</strong><br><span class="meta">Quick reference</span></a>
+        <a class="card" href="ITSecFoundation.html"><strong>IT Security Foundation</strong><br><span class="meta">Core concepts</span></a>
+        <a class="card" href="projects.html#yt"><strong>Videos</strong><br><span class="meta">Demos & walkthroughs</span></a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <p class="lead">I’m a Network & Security engineer focused on practical outcomes: reliable connectivity, least‑privilege by default, and clean observability. I enjoy labbing, writing concise notes, and building small tools that reduce repetitive work.</p>
+      <div class="row" style="margin-top:.75rem">
+        <span class="chip">Fortinet</span>
+        <span class="chip">Cisco</span>
+        <span class="chip">ASA/Firewalls</span>
+        <span class="chip">BGP / OSPF</span>
+        <span class="chip">Python</span>
+        <span class="chip">Power BI</span>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p class="lead">Open to roles and collaborations in the UAE and remote. The fastest way to reach me is email.</p>
+      <div class="row">
+        <a class="btn primary" href="mailto:emerson@example.com" aria-label="Send me an email">Email me</a>
+        <a class="btn" href="https://github.com/emersoninting" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/emersoninting" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container" role="contentinfo">
+    <div style="border-top:1px solid var(--line); padding-top:1rem; display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap">
+      <small>© 2025 Emerson Inting</small>
+      <small><a href="#">Back to top ↑</a></small>
+    </div>
+  </footer>
+</body>
+</html>
