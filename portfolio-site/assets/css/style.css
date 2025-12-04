@@ -95,3 +95,62 @@ body {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
+.hero-main {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-avatar {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  max-width: 480px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  background: var(--accent);
+  color: white;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.hero-btn:hover {
+  opacity: 0.85;
+}
+
+.scroll-down {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-top: 1rem;
+}
+
