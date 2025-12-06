@@ -154,3 +154,23 @@ body {
   margin-top: 1rem;
 }
 
+/* For Linkedin icon */
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  background: var(--accent);
+  color: white;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.hero-btn .icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
