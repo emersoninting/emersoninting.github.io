@@ -12,7 +12,7 @@ body {
   margin: 0;
 }
 
-/* First block: hero */
+/* First block: hero with depth */
 .hero-main {
   min-height: 90vh;
   display: flex;
@@ -20,7 +20,14 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
+  padding: 3rem 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 1100px;
+  margin: 2rem auto;
+
+  /* depth */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
 .hero-avatar {
@@ -79,9 +86,16 @@ body {
   margin-top: 1rem;
 }
 
-/* Generic sections */
+/* Generic sections with depth */
 .section {
-  padding: 3rem 10vw 1rem;
+  padding: 3rem 10vw 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 1100px;
+  margin: 3rem auto;
+
+  /* depth */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
 }
 
 .section h2 {
