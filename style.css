@@ -86,26 +86,43 @@ body {
   margin-top: 1rem;
 }
 
-/* Premium spacing for About section */
+/* Premium centered About section with divider */
 #about {
-  padding: 4rem 10vw 3.5rem;      /* More top/bottom breathing room */
-  line-height: 1.75;              /* Comfort reading line height */
+  padding: 4rem 10vw 3.5rem;
+  line-height: 1.75;
+  text-align: center;                 /* Center all text */
 }
 
 #about h2 {
-  margin-bottom: 1.8rem;          /* Extra space under heading */
-  letter-spacing: -0.015em;       /* Modern premium heading feel */
+  margin-bottom: 2rem;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;              /* Needed for centered underline */
+}
+
+/* Subtle premium divider under heading */
+#about h2::after {
+  content: "";
+  display: block;
+  width: 60px;                        /* Underline width */
+  height: 3px;                        /* Underline thickness */
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: 999px;
+  margin: 0.8rem auto 0;              /* Center the underline */
+  opacity: 0.85;
 }
 
 #about p {
-  margin-bottom: 1.6rem;          /* Space between paragraphs */
-  font-size: 1.05rem;             /* Slightly larger reading size */
-  max-width: 720px;               /* Comfortable text width */
+  margin: 1.4rem auto;                /* Even spacing between paragraphs */
+  font-size: 1.05rem;
+  max-width: 720px;                   /* Comfortable centered reading width */
 }
 
 #about p:last-child {
-  margin-bottom: 0;               /* Clean ending */
+  margin-bottom: 0;
 }
+
 /* Premium spacing for About section ---END---*/
 
 /* Generic sections with depth */
