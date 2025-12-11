@@ -94,19 +94,18 @@ body {
   line-height: 1.75;
 }
 
-/* Center ONLY the heading/intro */
+/* Center ONLY the heading */
 #about h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto;
   letter-spacing: -0.015em;
   font-weight: 600;
   position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
+  width: max-content;        /* Keeps heading centered naturally */
+  max-width: 100%;
 }
 
-/* Divider under the heading */
+/* Decorative divider below heading */
 #about h2::after {
   content: "";
   display: block;
@@ -114,22 +113,23 @@ body {
   height: 3px;
   background: linear-gradient(90deg, var(--accent), var(--primary));
   border-radius: 999px;
-  margin: 0.8rem auto 0;
+  margin: 0.8rem auto 0 auto;
   opacity: 0.85;
 }
 
-/* Left-align paragraphs for readability */
+/* Left-aligned body content for premium readability */
 #about p {
   margin: 1.4rem auto;
   font-size: 1.05rem;
   max-width: 720px;
-  text-align: left;      /* Left-aligned body text */
+  text-align: left;
 }
 
 /* Clean ending */
 #about p:last-child {
   margin-bottom: 0;
 }
+
 
 
 /* Premium spacing for About section ---END---*/
