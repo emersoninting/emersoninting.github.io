@@ -88,41 +88,49 @@ body {
 
 /* Premium centered About section with divider */
 
+/* Premium About section layout */
 #about {
   padding: 4rem 10vw 3.5rem;
   line-height: 1.75;
-  text-align: center;                 /* Center all text */
 }
 
+/* Center ONLY the heading/intro */
 #about h2 {
+  text-align: center;
   margin-bottom: 2rem;
   letter-spacing: -0.015em;
   font-weight: 600;
   position: relative;
-  display: inline-block;              /* Needed for centered underline */
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* Subtle premium divider under heading */
+/* Divider under the heading */
 #about h2::after {
   content: "";
   display: block;
-  width: 60px;                        /* Underline width */
-  height: 3px;                        /* Underline thickness */
+  width: 60px;
+  height: 3px;
   background: linear-gradient(90deg, var(--accent), var(--primary));
   border-radius: 999px;
-  margin: 0.8rem auto 0;              /* Center the underline */
+  margin: 0.8rem auto 0;
   opacity: 0.85;
 }
 
+/* Left-align paragraphs for readability */
 #about p {
-  margin: 1.4rem auto;                /* Even spacing between paragraphs */
+  margin: 1.4rem auto;
   font-size: 1.05rem;
-  max-width: 720px;                   /* Comfortable centered reading width */
+  max-width: 720px;
+  text-align: left;      /* Left-aligned body text */
 }
 
+/* Clean ending */
 #about p:last-child {
   margin-bottom: 0;
 }
+
 
 /* Premium spacing for About section ---END---*/
 
