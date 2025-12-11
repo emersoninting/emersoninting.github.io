@@ -86,6 +86,28 @@ body {
   margin-top: 1rem;
 }
 
+/* Premium spacing for About section */
+#about {
+  padding: 4rem 10vw 3.5rem;      /* More top/bottom breathing room */
+  line-height: 1.75;              /* Comfort reading line height */
+}
+
+#about h2 {
+  margin-bottom: 1.8rem;          /* Extra space under heading */
+  letter-spacing: -0.015em;       /* Modern premium heading feel */
+}
+
+#about p {
+  margin-bottom: 1.6rem;          /* Space between paragraphs */
+  font-size: 1.05rem;             /* Slightly larger reading size */
+  max-width: 720px;               /* Comfortable text width */
+}
+
+#about p:last-child {
+  margin-bottom: 0;               /* Clean ending */
+}
+/* Premium spacing for About section ---END---*/
+
 /* Generic sections with depth */
 .section {
   padding: 3rem 10vw 2rem;
