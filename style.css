@@ -116,6 +116,60 @@ main {
   margin: 0 0 1.2rem;
   letter-spacing: -0.015em;
 }
+/* Currently Working On – 3 column highlight layout */
+.current-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* Individual highlight cards */
+.current-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(221, 227, 236, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Subtle lift on hover */
+.current-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.current-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+}
+
+.current-card p {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.current-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.current-card li {
+  margin: 0.4rem 0;
+}
+
+/* Responsive: stack columns on mobile */
+@media (max-width: 900px) {
+  .current-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* About marker */
 #about h2::after {
