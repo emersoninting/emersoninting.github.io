@@ -3,7 +3,11 @@
   --primary: #1f3b5d;
   --accent: #0fa3b1;
   --text: #111827;
+  --card: #ffffff;
+  --border: #dde3ec;
 }
+
+* { box-sizing: border-box; }
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -12,7 +16,12 @@ body {
   margin: 0;
 }
 
-/* HERO (first block) */
+/* Gives clear separation between cards */
+main {
+  padding: 1.5rem 0 4rem;
+}
+
+/* HERO */
 .hero-main {
   min-height: 92vh;
   display: flex;
@@ -22,12 +31,13 @@ body {
   text-align: center;
 
   padding: 4rem 2rem 3rem;
-  background: #ffffff;
+  background: var(--card);
   border-radius: 20px;
   max-width: 1100px;
   margin: 2.5rem auto;
 
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(221, 227, 236, 0.6);
 }
 
 .hero-avatar {
@@ -43,18 +53,18 @@ body {
   font-size: 2.2rem;
   color: var(--primary);
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem;
   letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
   font-size: 1.1rem;
   max-width: 520px;
-  margin-bottom: 2.2rem;
+  margin: 0 0 2.2rem;
   line-height: 1.6;
 }
 
-/* Icon row in hero */
+/* Icons */
 .hero-links {
   display: flex;
   gap: 1.6rem;
@@ -88,25 +98,26 @@ body {
   opacity: 0.7;
 }
 
-/* GENERIC SECTIONS (About, Current, Projects, Notes, Certifications, Contact) */
+/* SECTIONS */
 .section {
   padding: 3.5rem 10vw 2.5rem;
-  background: #ffffff;
+  background: var(--card);
   border-radius: 16px;
   max-width: 1100px;
   margin: 3rem auto;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(221, 227, 236, 0.6);
   scroll-margin-top: 5rem;
 }
 
 .section h2 {
   font-size: 1.6rem;
   color: var(--primary);
-  margin-bottom: 1.2rem;
+  margin: 0 0 1.2rem;
   letter-spacing: -0.015em;
 }
 
-/* About heading marker (subtle divider) */
+/* About marker */
 #about h2::after {
   content: "";
   display: block;
@@ -118,7 +129,7 @@ body {
   opacity: 0.85;
 }
 
-/* Body text spacing (premium readability) */
+/* Typography */
 .section p,
 .section ul {
   max-width: 720px;
@@ -126,23 +137,17 @@ body {
   font-size: 1.05rem;
 }
 
-.section p {
-  margin: 1.2rem 0;
-}
+.section p { margin: 1.2rem 0; }
 
-.section ul {
-  margin: 1rem 0 0 1.25rem;
-}
+.section ul { margin: 1rem 0 0 1.25rem; }
 
-.section li {
-  margin: 0.5rem 0;
-}
+.section li { margin: 0.5rem 0; }
 
-/* Certifications badges */
+/* Badges */
 .badge {
   display: inline-block;
-  background: #ffffff;
-  border: 1px solid #dde3ec;
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.3rem 0.8rem;
   font-size: 0.85rem;
@@ -150,11 +155,12 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Responsive tweaks */
+/* Mobile */
 @media (max-width: 700px) {
-  .hero-main {
+  .hero-main,
+  .section {
     margin: 1.25rem;
-    padding: 3rem 1.5rem 2.5rem;
+    padding: 2.5rem 1.5rem 2rem;
   }
 
   .hero-avatar {
@@ -163,16 +169,7 @@ body {
     margin-bottom: 1.5rem;
   }
 
-  .hero-title {
-    font-size: 1.9rem;
-  }
+  .hero-title { font-size: 1.9rem; }
 
-  .hero-subtitle {
-    font-size: 1.05rem;
-  }
-
-  .section {
-    margin: 1.25rem;
-    padding: 2.5rem 1.5rem 2rem;
-  }
+  .hero-subtitle { font-size: 1.05rem; }
 }
