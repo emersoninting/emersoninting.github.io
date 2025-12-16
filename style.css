@@ -133,6 +133,51 @@ body {
 
 
 /* Premium spacing for About section ---END---*/
+/* About split layout: text left, photo right */
+.about-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+/* Left side text */
+.about-text {
+  flex: 1;
+  max-width: 560px;
+}
+
+.about-name {
+  margin: 0 0 0.75rem 0;
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-align: left;
+}
+
+.about-tagline {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 420px;
+}
+
+/* Right side photo */
+.about-photo {
+  flex: 0 0 320px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary);
+/* End About */
+
 
 /* Generic sections with depth */
 .section {
@@ -168,3 +213,5 @@ body {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
+
