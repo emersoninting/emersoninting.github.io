@@ -12,51 +12,55 @@ body {
   margin: 0;
 }
 
-/* First block: hero with depth */
+/* HERO (first block) */
 .hero-main {
-  min-height: 90vh;
+  min-height: 92vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 3rem 2rem;
+
+  padding: 4rem 2rem 3rem;
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: 20px;
   max-width: 1100px;
-  margin: 2rem auto;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  margin: 2.5rem auto;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
 }
 
 .hero-avatar {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid var(--primary);
-  margin-bottom: 1.2rem;
+  border: 4px solid var(--primary);
+  margin-bottom: 2rem;
 }
 
 .hero-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-  font-size: 1.05rem;
-  max-width: 480px;
-  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  max-width: 520px;
+  margin-bottom: 2.2rem;
+  line-height: 1.6;
 }
 
-/* Icon row */
+/* Icon row in hero */
 .hero-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.6rem;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.4rem;
 }
 
 .hero-icon-link {
@@ -67,109 +71,71 @@ body {
 }
 
 .hero-icon {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
-  transition: transform 0.18s ease-out;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .hero-icon-link:hover .hero-icon {
-  transform: scale(1.18);
+  transform: scale(1.2);
+  opacity: 0.85;
 }
 
 .scroll-down {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--primary);
-  margin-top: 1rem;
+  opacity: 0.7;
 }
 
-/* Generic sections with depth */
+/* GENERIC SECTIONS (About, Current, Projects, Notes, Certifications, Contact) */
 .section {
-  padding: 3rem 10vw 2rem;
+  padding: 3.5rem 10vw 2.5rem;
   background: #ffffff;
   border-radius: 16px;
   max-width: 1100px;
   margin: 3rem auto;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  scroll-margin-top: 5rem;
 }
 
 .section h2 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: var(--primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.015em;
 }
 
+/* About heading marker (subtle divider) */
+#about h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: 999px;
+  margin-top: 0.8rem;
+  opacity: 0.85;
+}
+
+/* Body text spacing (premium readability) */
 .section p,
 .section ul {
   max-width: 720px;
+  line-height: 1.75;
+  font-size: 1.05rem;
 }
 
-/* About split layout: text left, photo right */
-#about.about-split {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
+.section p {
+  margin: 1.2rem 0;
 }
 
-/* Left side text */
-.about-text {
-  flex: 1;
-  max-width: 560px;
+.section ul {
+  margin: 1rem 0 0 1.25rem;
 }
 
-.about-name {
-  margin: 0 0 0.75rem 0;
-  font-size: 2rem;
-  color: var(--primary);
-  font-weight: 700;
-  text-align: left;
-}
-
-.about-tagline {
-  margin: 0;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  text-align: left;
-  max-width: 420px;
-}
-
-/* Right side photo */
-.about-photo {
-  flex: 0 0 320px;
-  display: flex;
-  justify-content: center;
-}
-
-.about-photo img {
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--primary);
-}
-
-/* Mobile: stack vertically */
-@media (max-width: 800px) {
-  #about.about-split {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-name,
-  .about-tagline {
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .about-photo {
-    flex-basis: auto;
-  }
-
-  .about-photo img {
-    width: 220px;
-    height: 220px;
-  }
+.section li {
+  margin: 0.5rem 0;
 }
 
 /* Certifications badges */
@@ -178,8 +144,35 @@ body {
   background: #ffffff;
   border: 1px solid #dde3ec;
   border-radius: 999px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 700px) {
+  .hero-main {
+    margin: 1.25rem;
+    padding: 3rem 1.5rem 2.5rem;
+  }
+
+  .hero-avatar {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .section {
+    margin: 1.25rem;
+    padding: 2.5rem 1.5rem 2rem;
+  }
 }
