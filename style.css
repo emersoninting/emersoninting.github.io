@@ -26,11 +26,7 @@ main {
   min-height: 92vh;
   display:flex;
   align-items:center;
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0 52%,
-    #e9eff6 52% 100%
-  );
+  background: linear-gradient(to bottom, #ffffff 0 52%, #e9eff6 52% 100%);
 }
 
 
