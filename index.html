@@ -2,184 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Engr. Emerson Inting | Portfolio</title>
-
-  <!-- Cache-busted CSS to ensure updates apply -->
-  <link rel="stylesheet" href="style.css?v=2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emerson Inting | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="logo">Emerson</div>
 
-  <main id="top">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
+      <a class="nav-cta" href="#contact">Let’s Talk</a>
+    </nav>
+  </header>
+
+  <main>
     <!-- HERO / FIRST BLOCK -->
-    <section class="hero-main">
-      <img
-        src="[02]Pictures/[02][01]PictureAssets/Emerson_OathTaking.jpg"
-        alt="Emerson Inting"
-        class="hero-avatar"
-      />
+    <section class="hero-split">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">Engr. Emerson Inting</h1>
+          <p class="hero-subtitle">
+            I solve problems by designing systems—starting with myself.
+          </p>
 
-      <h1 class="hero-title">Engr. Emerson Inting</h1>
-      <p class="hero-subtitle">
-        I solve problems by designing systems—starting with myself.
-      </p>
+          <div class="hero-cta">
+            <a class="btn-primary" href="#projects">View Projects</a>
+          </div>
 
-      <div class="hero-links">
-        <!-- LinkedIn -->
-        <a
-          href="https://www.linkedin.com/in/emersoninting/"
-          class="hero-icon-link"
-          target="_blank"
-          rel="noopener"
-        >
-          <img
-            src="[01]Project%20Files/[01][01]Porfolio_LandingPage/Assets/LinkedIn_icon.svg.png"
-            alt="LinkedIn"
-            class="hero-icon"
-          />
-        </a>
+          <div class="hero-links">
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/emersoninting/"
+              class="hero-icon-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="[02]Pictures/[02][01]PictureAssets/LinkedIn_icon.svg.png"
+                alt="LinkedIn"
+                class="hero-icon"
+              />
+            </a>
 
-        <!-- YouTube -->
-        <a
-          href="https://www.youtube.com/@HeyEmersonInting/videos"
-          class="hero-icon-link"
-          target="_blank"
-          rel="noopener"
-        >
-          <img
-            src="[02]Pictures/[02][05]Project/Youtube.png"
-            alt="YouTube"
-            class="hero-icon"
-          />
-        </a>
+            <!-- Facebook -->
+            <a
+              href="https://www.facebook.com/heyemersoninting/"
+              class="hero-icon-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="[02]Pictures/[02][01]PictureAssets/Facebook%20logo%20icon.webp"
+                alt="Facebook"
+                class="hero-icon"
+              />
+            </a>
 
-        <!-- Email -->
-        <a href="#contact" class="hero-icon-link">
-          <img
-            src="[02]Pictures/[02][01]PictureAssets/Email%20icon.webp"
-            alt="Email"
-            class="hero-icon"
-          />
-        </a>
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/heyemersoninting/"
+              class="hero-icon-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="[02]Pictures/[02][01]PictureAssets/Instagram%20icon.webp"
+                alt="Instagram"
+                class="hero-icon"
+              />
+            </a>
+
+            <!-- YouTube -->
+            <a
+              href="https://www.youtube.com/@HeyEmersonInting"
+              class="hero-icon-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="[02]Pictures/[02][01]PictureAssets/Youtube%20Icon.webp"
+                alt="YouTube"
+                class="hero-icon"
+              />
+            </a>
+
+            <!-- Email -->
+            <a href="#contact" class="hero-icon-link">
+              <img
+                src="[02]Pictures/[02][01]PictureAssets/Email%20icon.webp"
+                alt="Email"
+                class="hero-icon"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img src="Pix.jpg" alt="Emerson Inting" class="hero-photo" />
+        </div>
       </div>
-
-      <div class="scroll-down">⌄</div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section">
-      <h2>Thanks for stopping by — let me show you around</h2>
-
-      <p>
-        I’m Emerson, an Electronics Engineer who enjoys turning vague problems
-        into clear, practical solutions. When something isn’t working as it
-        should, I don’t work around it — I study it and improve the system
-        behind it.
-      </p>
-
-      <p>
-        I realised my technical skills were growing faster than my ability to
-        communicate them, so I joined Toastmasters and started deliberately
-        improving my communication and leadership. The same mindset guides how
-        I learn, work, and grow.
-      </p>
-
-      <p>
-        As you scroll through this page, you’ll see what I’m currently working
-        on, projects I’m building or experimenting with, notes where I think
-        out loud, and certifications that support the work I do.
-      </p>
-    </section>
-    
-    <!-- Currently Working On -->
-    <section id="current" class="section">
-      <h2>Currently Working On</h2>
-    
-      <div class="current-grid">
-    
-        <!-- Column 1: Communication -->
-        <div class="current-card">
-          <h3>Communication</h3>
-          <p>
-            Actively improving communication and leadership skills through
-            Toastmasters and content creation.
-          </p>
-          <ul>
-            <li>Toastmasters speeches & leadership roles</li>
-            <li>YouTube videos and knowledge sharing</li>
-          </ul>
-        </div>
-    
-        <!-- Column 2: Networking -->
-        <div class="current-card">
-          <h3>Networking</h3>
-          <p>
-            Strengthening core networking fundamentals and real-world
-            implementation skills.
-          </p>
-          <ul>
-            <li>CCNA concepts and labs</li>
-            <li>Routing, switching, and network design</li>
-          </ul>
-        </div>
-    
-        <!-- Column 3: Automation -->
-        <div class="current-card">
-          <h3>Automation</h3>
-          <p>
-            Exploring ways to automate workflows and reduce manual effort
-            using modern tools.
-          </p>
-          <ul>
-            <li>Scripting and workflow automation</li>
-            <li>Process optimization and tooling</li>
-          </ul>
-        </div>
-    
+      <h2 class="section-title">About</h2>
+      <div class="section-content">
+        <p>
+          I’m Emerson Inting—an engineer focused on building reliable systems and
+          improving operations through structured thinking, automation, and clear
+          communication.
+        </p>
       </div>
     </section>
 
-
     <!-- PROJECTS -->
     <section id="projects" class="section">
-      <h2>Projects</h2>
-      <p>
-        Selected networking, security, automation, and system-design projects
-        will be documented here.
-      </p>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-content">
+        <div class="card-grid">
+          <article class="card">
+            <h3>Project Title</h3>
+            <p>Short description of the project.</p>
+          </article>
+
+          <article class="card">
+            <h3>Project Title</h3>
+            <p>Short description of the project.</p>
+          </article>
+
+          <article class="card">
+            <h3>Project Title</h3>
+            <p>Short description of the project.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- NOTES / BLOG -->
-    <section id="notes" class="section">
-      <h2>Notes / Blog</h2>
-      <p>
-        Short technical notes, reflections, and experiments will live here.
-      </p>
-    </section>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <h2 class="section-title">Experience</h2>
+      <div class="section-content">
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Role Title</h3>
+            <p class="muted">Company | Dates</p>
+            <p>Short impact statement about the role.</p>
+          </div>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="section">
-      <h2>Certifications</h2>
-      <div class="cert-grid">
-        <span class="badge">CCNA</span>
-        <span class="badge">Fortinet Cybersecurity Associate</span>
-        <span class="badge">Licensed Electronics Engineer (ECE)</span>
+          <div class="timeline-item">
+            <h3>Role Title</h3>
+            <p class="muted">Company | Dates</p>
+            <p>Short impact statement about the role.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="section">
-      <h2>Contact Me</h2>
-      <p>
-        You can reach me via LinkedIn or email.
-      </p>
-      <p>
-        <a href="mailto:your-email@example.com">your-email@example.com</a>
-      </p>
+      <h2 class="section-title">Contact</h2>
+      <div class="section-content">
+        <p>For inquiries, please reach out via email or LinkedIn.</p>
+      </div>
     </section>
-
   </main>
 
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Emerson Inting. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
