@@ -1,3 +1,6 @@
+/* ========================= */
+/* Root Variables Block */
+/* ========================= */
 :root {
   --bg: #f7f9fc;
   --primary: #1f3b5d;
@@ -6,22 +9,40 @@
   --card: #ffffff;
   --border: #dde3ec;
 }
+/* End of Root Variables Block */
 
+
+/* ========================= */
+/* Global Reset Block */
+/* ========================= */
 * { box-sizing: border-box; }
+/* End of Global Reset Block */
 
+
+/* ========================= */
+/* Body Block */
+/* ========================= */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
   margin: 0;
 }
+/* End of Body Block */
 
-/* Gives clear separation between cards */
+
+/* ========================= */
+/* Main Layout Block */
+/* ========================= */
 main {
   padding: 1.5rem 0 4rem;
 }
+/* End of Main Layout Block */
 
-/* HERO */
+
+/* ========================= */
+/* First Block: HERO */
+/* ========================= */
 .hero-split{
   min-height: 92vh;
   display:flex;
@@ -30,7 +51,7 @@ main {
 }
 
 .hero-inner{
-  width: min(1000px, 92vw); /* reduced width */
+  width: min(1000px, 92vw);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -51,7 +72,10 @@ main {
 
 .hero-title{ margin:0 0 .75rem; }
 
-.hero-subtitle{ margin:0 0 1.5rem; max-width: 520px; }
+.hero-subtitle{
+  margin:0 0 1.5rem;
+  max-width: 520px;
+}
 
 .hero-photo{
   width: 100%;
@@ -73,13 +97,17 @@ main {
 
 @media (max-width: 900px){
   .hero-inner{ grid-template-columns: 1fr; }
-  .hero-media{ order:-1; }
-  .hero-copy{ text-align:center; }
+  .hero-media{ order:-1; justify-content:center; }
+  .hero-copy{ text-align:center; padding-right: 0; }
   .hero-subtitle{ margin-left:auto; margin-right:auto; }
+  .hero-photo{ margin-left: 0; }
 }
+/* End of First Block: HERO */
 
 
-/* Icons */
+/* ========================= */
+/* Second Block: HERO Icons */
+/* ========================= */
 .hero-links {
   display: flex;
   gap: 1.6rem;
@@ -112,8 +140,12 @@ main {
   color: var(--primary);
   opacity: 0.7;
 }
+/* End of Second Block: HERO Icons */
 
-/* SECTIONS */
+
+/* ========================= */
+/* Third Block: Sections (Global Card Style) */
+/* ========================= */
 .section {
   padding: 3.5rem 10vw 2.5rem;
   background: var(--card);
@@ -131,7 +163,38 @@ main {
   margin: 0 0 1.2rem;
   letter-spacing: -0.015em;
 }
-/* Currently Working On – 3 column highlight layout */
+/* End of Third Block: Sections (Global Card Style) */
+
+
+/* ========================= */
+/* Fourth Block: About Section Override (White, No Card Margin) */
+/* ========================= */
+#about.section{
+  background: #ffffff;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+
+  /* remove the card-style outer spacing for About only */
+  margin: 0 auto;
+  padding: 3.5rem 10vw 2.5rem;
+}
+
+#about .section-content{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#about p,
+#about ul{
+  max-width: 720px;
+}
+/* End of Fourth Block: About Section Override */
+
+
+/* ========================= */
+/* Fifth Block: Currently Working On (3-Column Layout) */
+/* ========================= */
 .current-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -139,7 +202,6 @@ main {
   margin-top: 2.5rem;
 }
 
-/* Individual highlight cards */
 .current-card {
   background: #ffffff;
   border-radius: 14px;
@@ -149,7 +211,6 @@ main {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Subtle lift on hover */
 .current-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
@@ -178,15 +239,17 @@ main {
   margin: 0.4rem 0;
 }
 
-/* Responsive: stack columns on mobile */
 @media (max-width: 900px) {
   .current-grid {
     grid-template-columns: 1fr;
   }
 }
+/* End of Fifth Block: Currently Working On */
 
 
-/* About marker */
+/* ========================= */
+/* Sixth Block: About Marker */
+/* ========================= */
 #about h2::after {
   content: "";
   display: block;
@@ -197,8 +260,12 @@ main {
   margin-top: 0.8rem;
   opacity: 0.85;
 }
+/* End of Sixth Block: About Marker */
 
-/* Typography */
+
+/* ========================= */
+/* Seventh Block: Typography */
+/* ========================= */
 .section p,
 .section ul {
   max-width: 720px;
@@ -211,8 +278,12 @@ main {
 .section ul { margin: 1rem 0 0 1.25rem; }
 
 .section li { margin: 0.5rem 0; }
+/* End of Seventh Block: Typography */
 
-/* Badges */
+
+/* ========================= */
+/* Eighth Block: Badges */
+/* ========================= */
 .badge {
   display: inline-block;
   background: var(--card);
@@ -223,8 +294,12 @@ main {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
 }
+/* End of Eighth Block: Badges */
 
-/* Mobile */
+
+/* ========================= */
+/* Ninth Block: Mobile Tweaks */
+/* ========================= */
 @media (max-width: 700px) {
   .hero-main,
   .section {
@@ -242,3 +317,4 @@ main {
 
   .hero-subtitle { font-size: 1.05rem; }
 }
+/* End of Ninth Block: Mobile Tweaks */
