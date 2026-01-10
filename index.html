@@ -1,0 +1,177 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emerson Inting</title>
+
+  <!-- Trust-friendly, highly readable font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="#top">Emerson Inting</a>
+
+      <div class="nav-links">
+        <a href="#projects">Project</a>
+        <a href="#certifications">Certifications</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="connect.html">Connect</a>
+        <a class="btn btn-solid" href="assets/Emerson-Inting-CV.pdf" download>Download CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1>Create some sample headline here</h1>
+          <p class="muted">Call to action</p>
+        </div>
+
+        <div class="hero-photo" aria-label="Profile photo placeholder">
+          <span>Photo</span>
+        </div>
+      </div>
+
+      <div class="quick-cards">
+        <a class="card small-card" href="#" aria-label="LinkedIn card">Linkedin</a>
+        <a class="card small-card" href="#" aria-label="YouTube card">Youtube</a>
+        <a class="card small-card" href="connect.html" aria-label="Contact details card">Contact Details</a>
+      </div>
+    </section>
+
+    <!-- CURRENTLY WORKING (simple slider) -->
+    <section class="section">
+      <div class="slider-wrap">
+        <button class="slider-btn left" data-slider="work" aria-label="Previous">&#8249;</button>
+
+        <div class="slider" id="slider-work" data-snap>
+          <article class="slide">
+            <p class="center strong">Currently working section</p>
+          </article>
+          <article class="slide"><p class="center muted">Placeholder</p></article>
+          <article class="slide"><p class="center muted">Placeholder</p></article>
+          <article class="slide"><p class="center muted">Placeholder</p></article>
+        </div>
+
+        <button class="slider-btn right" data-slider="work" aria-label="Next">&#8250;</button>
+      </div>
+
+      <div class="dots" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </section>
+
+    <!-- KNOWLEDGE BASE -->
+    <section class="kb">
+      <h2>Knowledge Base</h2>
+
+      <div class="kb-grid">
+        <div class="kb-card">
+          <h3>Communications</h3>
+          <div class="kb-body"></div>
+        </div>
+
+        <div class="kb-card">
+          <h3>Network &amp; Security</h3>
+          <div class="kb-body"></div>
+        </div>
+
+        <div class="kb-card">
+          <h3>Automation</h3>
+          <div class="kb-body"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS (simple slider) -->
+    <section class="section" id="projects">
+      <h2 class="center-title">Projects</h2>
+
+      <div class="slider-wrap">
+        <button class="slider-btn left" data-slider="projects" aria-label="Previous">&#8249;</button>
+
+        <div class="slider slider-cards" id="slider-projects" data-snap>
+          <article class="tile"></article>
+          <article class="tile"></article>
+          <article class="tile"></article>
+          <article class="tile"></article>
+          <article class="tile"></article>
+        </div>
+
+        <button class="slider-btn right" data-slider="projects" aria-label="Next">&#8250;</button>
+      </div>
+
+      <div class="dots" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="cert" id="certifications">
+      <h2>Certifications</h2>
+    </section>
+
+    <!-- BLOGS/NOTES (simple slider) -->
+    <section class="section">
+      <h2 class="center-title">Blogs/Notes</h2>
+
+      <div class="slider-wrap">
+        <button class="slider-btn left" data-slider="blogs" aria-label="Previous">&#8249;</button>
+
+        <div class="slider slider-cards" id="slider-blogs" data-snap>
+          <article class="tile"></article>
+          <article class="tile"></article>
+          <article class="tile"></article>
+          <article class="tile"></article>
+        </div>
+
+        <button class="slider-btn right" data-slider="blogs" aria-label="Next">&#8250;</button>
+      </div>
+
+      <div class="dots" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>Thank you note</div>
+        <a class="footer-link" href="connect.html">Contact</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Minimal slider: scrollBy one "page" per click (keeps it simple)
+    const map = {
+      work: document.getElementById('slider-work'),
+      projects: document.getElementById('slider-projects'),
+      blogs: document.getElementById('slider-blogs'),
+    };
+
+    document.querySelectorAll('.slider-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-slider');
+        const el = map[key];
+        if (!el) return;
+
+        const dir = btn.classList.contains('left') ? -1 : 1;
+        el.scrollBy({ left: dir * el.clientWidth, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
