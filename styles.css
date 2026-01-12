@@ -103,27 +103,6 @@ main{ padding-bottom:48px; }
   color:rgba(11,27,43,.55);
 }
 
-/* Quick cards under hero */
-.quick-cards{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-top:10px;
-}
-.qcard{
-  width:110px;
-  height:110px;
-  background:var(--card);
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--white);
-  font-weight:700;
-  box-shadow: var(--shadow);
-}
-.qcard:hover{ filter:brightness(.96); }
-
 /* =========================
    Generic sections
 ========================= */
@@ -157,7 +136,7 @@ main{ padding-bottom:48px; }
   box-shadow: var(--shadow);
   font-size:24px;
   line-height:1;
-  cursor:default; /* decorative only */
+  cursor:default;
   color:rgba(11,27,43,.6);
 }
 .car-track{
@@ -184,19 +163,10 @@ main{ padding-bottom:48px; }
   font-weight:800;
   box-shadow: var(--shadow);
 }
-.slide{ background:#ffffff; color:rgba(11,27,43,.7); border:1px solid rgba(11,27,43,.1); }
-
-.dots{
-  margin-top:10px;
-  display:flex;
-  justify-content:center;
-  gap:8px;
-}
-.dot{
-  width:10px; height:10px;
-  border-radius:999px;
-  border:1px solid rgba(11,27,43,.25);
-  background:transparent;
+.slide{
+  background:#ffffff;
+  color:rgba(11,27,43,.7);
+  border:1px solid rgba(11,27,43,.1);
 }
 
 /* =========================
@@ -242,40 +212,77 @@ main{ padding-bottom:48px; }
   background:#ffffff;
 }
 
-/* =========================
-   Certifications banner
-========================= */
-.banner{
-  background:var(--panel);
-  padding:28px 18px;
-  margin:26px 0;
-  text-align:center;
+/* =========================================================
+   LUXURY 3D HOVER — CURRENTLY WORKING ON
+   Targets: .car-track + .slide
+   Safe, subtle, desktop-only
+========================================================= */
+.car-track{
+  perspective:900px;
+  perspective-origin:center;
+  transform-style:preserve-3d;
 }
-.banner h2{
-  margin:0 0 8px 0;
-  color:var(--white);
-  font-weight:900;
-}
-.banner p{ margin:0; color:rgba(255,255,255,.9); font-weight:600; }
 
-/* =========================
-   Footer
-========================= */
-.footer{
-  max-width:1100px;
-  margin:26px auto 0;
-  padding:0 18px;
+.car-track .slide{
+  transform:translate3d(0,0,0);
+  transition:
+    transform 380ms cubic-bezier(.2,.8,.2,1),
+    box-shadow 380ms cubic-bezier(.2,.8,.2,1),
+    filter 380ms cubic-bezier(.2,.8,.2,1);
+  will-change:transform, box-shadow;
 }
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  gap:18px;
-  padding:16px 0;
-  border-top:1px solid rgba(11,27,43,.12);
-  color:rgba(11,27,43,.7);
-  font-weight:700;
+
+@media (hover: hover) and (pointer: fine){
+  .car-track .slide:hover{
+    transform:translate3d(0,-3px,14px);
+    box-shadow:
+      0 14px 34px rgba(0,0,0,.12),
+      0 4px 10px rgba(0,0,0,.06);
+    filter:brightness(1.01);
+  }
 }
-.footer-link{ color:#1d4f86; text-decoration:underline; }
+
+@media (hover: none) and (pointer: coarse){
+  .car-track .slide{
+    transition:none;
+  }
+}
+
+/* =========================================================
+   LUXURY 3D HOVER — KNOWLEDGE BASE
+   Targets: .kb-grid + .kb-card
+   Safe, subtle, desktop-only
+========================================================= */
+.kb-grid{
+  perspective:900px;
+  perspective-origin:center;
+  transform-style:preserve-3d;
+}
+
+.kb-grid .kb-card{
+  transform:translate3d(0,0,0);
+  transition:
+    transform 380ms cubic-bezier(.2,.8,.2,1),
+    box-shadow 380ms cubic-bezier(.2,.8,.2,1),
+    filter 380ms cubic-bezier(.2,.8,.2,1);
+  will-change:transform, box-shadow;
+}
+
+@media (hover: hover) and (pointer: fine){
+  .kb-grid .kb-card:hover{
+    transform:translate3d(0,-3px,14px);
+    box-shadow:
+      0 14px 34px rgba(0,0,0,.12),
+      0 4px 10px rgba(0,0,0,.06);
+    filter:brightness(1.01);
+  }
+}
+
+@media (hover: none) and (pointer: coarse){
+  .kb-grid .kb-card{
+    transition:none;
+  }
+}
 
 /* =========================
    Responsive
@@ -283,70 +290,7 @@ main{ padding-bottom:48px; }
 @media (max-width: 860px){
   .hero-inner{ grid-template-columns: 1fr; }
   .hero-photo{ justify-content:flex-start; }
-  .qcard{ width:104px; height:104px; }
   .kb-grid{ grid-template-columns:1fr; }
   .carousel{ grid-template-columns: 36px 1fr 36px; }
   .car-btn{ width:36px; height:36px; }
 }
-
-/* =========================
-   Luxury Hover Depth (Subtle 3D)
-   Applies to: qcard, tile, slide, kb-card
-========================= */
-
-/* Create a 3D context */
-.quick-cards,
-.kb-grid,
-.car-track{
-  perspective: 900px; /* subtle depth */
-  perspective-origin: center;
-}
-
-/* Base interactive card setup */
-.qcard,
-.tile,
-.slide,
-.kb-card{
-  transform: translateZ(0); /* stable rendering */
-  transition:
-    transform 380ms cubic-bezier(.2,.8,.2,1),
-    box-shadow 380ms cubic-bezier(.2,.8,.2,1),
-    filter 380ms cubic-bezier(.2,.8,.2,1);
-  will-change: transform, box-shadow;
-}
-
-/* Desktop hover only (graceful on touch devices) */
-@media (hover: hover) and (pointer: fine){
-  .qcard:hover,
-  .tile:hover,
-  .slide:hover,
-  .kb-card:hover{
-    transform: translateY(-3px) translateZ(14px); /* slight forward */
-    box-shadow:
-      0 14px 34px rgba(0,0,0,.12),
-      0 4px 10px rgba(0,0,0,.06); /* soft enhancement */
-    filter: brightness(1.01); /* premium micro-lift */
-  }
-
-  /* Optional: small press feedback for premium feel */
-  .qcard:active,
-  .tile:active,
-  .slide:active,
-  .kb-card:active{
-    transform: translateY(-1px) translateZ(8px);
-    box-shadow:
-      0 10px 26px rgba(0,0,0,.10),
-      0 3px 8px rgba(0,0,0,.06);
-  }
-}
-
-/* Mobile/touch: keep it calm and stable */
-@media (hover: none) and (pointer: coarse){
-  .qcard,
-  .tile,
-  .slide,
-  .kb-card{
-    transition: none;
-  }
-}
-
