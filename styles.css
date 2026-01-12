@@ -12,13 +12,7 @@
 }
 
 *{ box-sizing:border-box; }
-html,body{
-  margin:0;
-  padding:0;
-  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:var(--ink);
-  background:#ffffff;
-}
+html,body{ margin:0; padding:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:#ffffff; }
 a{ color:inherit; text-decoration:none; }
 main{ padding-bottom:48px; }
 
@@ -26,9 +20,7 @@ main{ padding-bottom:48px; }
    Header / Nav
 ========================= */
 .site-header{
-  position:sticky;
-  top:0;
-  z-index:20;
+  position:sticky; top:0; z-index:20;
   background:var(--nav);
   box-shadow: 0 2px 0 rgba(255,255,255,.15);
 }
@@ -41,34 +33,16 @@ main{ padding-bottom:48px; }
   justify-content:space-between;
   gap:18px;
 }
-.nav-left{
-  display:flex;
-  align-items:center;
-  gap:18px;
-  flex-wrap:wrap;
-}
-.brand{
-  color:var(--white);
-  font-weight:700;
-  letter-spacing:.2px;
-}
-.nav-link{
-  color:rgba(255,255,255,.9);
-  font-weight:500;
-}
+.nav-left{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+.brand{ color:var(--white); font-weight:700; letter-spacing:.2px; }
+.nav-link{ color:rgba(255,255,255,.9); font-weight:500; }
 .nav-link:hover{ text-decoration:underline; }
 
-.nav-right{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+.nav-right{ display:flex; align-items:center; gap:10px; }
 
 /* Buttons */
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
+  display:inline-flex; align-items:center; justify-content:center;
   padding:10px 14px;
   border-radius:10px;
   font-weight:600;
@@ -129,8 +103,29 @@ main{ padding-bottom:48px; }
   color:rgba(11,27,43,.55);
 }
 
+/* Quick cards under hero */
+.quick-cards{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+.qcard{
+  width:110px;
+  height:110px;
+  background:var(--card);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--white);
+  font-weight:700;
+  box-shadow: var(--shadow);
+}
+.qcard:hover{ filter:brightness(.96); }
+
 /* =========================
-   Generic Sections
+   Generic sections
 ========================= */
 .section{
   max-width:1100px;
@@ -146,7 +141,7 @@ main{ padding-bottom:48px; }
 .muted{ color:var(--muted); }
 
 /* =========================
-   Carousel
+   Carousel (CSS scroll-snap)
 ========================= */
 .carousel{
   display:grid;
@@ -155,15 +150,14 @@ main{ padding-bottom:48px; }
   gap:10px;
 }
 .car-btn{
-  width:44px;
-  height:44px;
+  width:44px; height:44px;
   border-radius:999px;
   border:1px solid rgba(11,27,43,.2);
   background:#ffffff;
   box-shadow: var(--shadow);
   font-size:24px;
   line-height:1;
-  cursor:default;
+  cursor:default; /* decorative only */
   color:rgba(11,27,43,.6);
 }
 .car-track{
@@ -177,8 +171,7 @@ main{ padding-bottom:48px; }
 }
 .car-track::-webkit-scrollbar{ display:none; }
 
-.slide,
-.tile{
+.slide, .tile{
   scroll-snap-align:center;
   flex:0 0 min(280px, 80%);
   height:140px;
@@ -191,15 +184,23 @@ main{ padding-bottom:48px; }
   font-weight:800;
   box-shadow: var(--shadow);
 }
+.slide{ background:#ffffff; color:rgba(11,27,43,.7); border:1px solid rgba(11,27,43,.1); }
 
-.slide{
-  background:#ffffff;
-  color:rgba(11,27,43,.7);
-  border:1px solid rgba(11,27,43,.1);
+.dots{
+  margin-top:10px;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+}
+.dot{
+  width:10px; height:10px;
+  border-radius:999px;
+  border:1px solid rgba(11,27,43,.25);
+  background:transparent;
 }
 
 /* =========================
-   Knowledge Base
+   Knowledge Base Panel
 ========================= */
 .panel{
   background:var(--panel);
@@ -241,31 +242,69 @@ main{ padding-bottom:48px; }
   background:#ffffff;
 }
 
+/* =========================
+   Certifications banner
+========================= */
+.banner{
+  background:var(--panel);
+  padding:28px 18px;
+  margin:26px 0;
+  text-align:center;
+}
+.banner h2{
+  margin:0 0 8px 0;
+  color:var(--white);
+  font-weight:900;
+}
+.banner p{ margin:0; color:rgba(255,255,255,.9); font-weight:600; }
+
+/* =========================
+   Footer
+========================= */
+.footer{
+  max-width:1100px;
+  margin:26px auto 0;
+  padding:0 18px;
+}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  padding:16px 0;
+  border-top:1px solid rgba(11,27,43,.12);
+  color:rgba(11,27,43,.7);
+  font-weight:700;
+}
+.footer-link{ color:#1d4f86; text-decoration:underline; }
+
 /* =========================================================
-   LUXURY 3D HOVER — SHARED CARD CONTEXTS
+   LUXURY 3D HOVER — CURRENTLY WORKING / PROJECTS / BLOGS / KB
    Applies to:
-   - Currently Working On (.slide)
-   - Projects (.tile)
-   - Blogs / Notes (.tile)
-   - Knowledge Base (.kb-card)
+   - Currently Working On cards: .slide
+   - Projects cards: .tile
+   - Blogs/Notes cards: .tile
+   - Knowledge Base cards: .kb-card (including kb-card--lux)
+   Safe, subtle, desktop-only; degrades on mobile
 ========================================================= */
+
+/* 3D contexts (do not affect layout) */
 .car-track,
 .kb-grid{
-  perspective:900px;
-  perspective-origin:center;
-  transform-style:preserve-3d;
+  perspective: 900px;
+  perspective-origin: center;
+  transform-style: preserve-3d;
 }
 
 /* Base interaction layer */
 .slide,
 .tile,
 .kb-card{
-  transform:translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   transition:
     transform 380ms cubic-bezier(.2,.8,.2,1),
     box-shadow 380ms cubic-bezier(.2,.8,.2,1),
     filter 380ms cubic-bezier(.2,.8,.2,1);
-  will-change:transform, box-shadow;
+  will-change: transform, box-shadow;
 }
 
 /* Desktop hover only */
@@ -273,21 +312,97 @@ main{ padding-bottom:48px; }
   .slide:hover,
   .tile:hover,
   .kb-card:hover{
-    transform:translate3d(0,-3px,14px);
+    transform: translate3d(0,-3px,14px);
     box-shadow:
       0 14px 34px rgba(0,0,0,.12),
       0 4px 10px rgba(0,0,0,.06);
-    filter:brightness(1.01);
+    filter: brightness(1.01);
   }
 }
 
-/* Mobile / touch — no hover dependency */
+/* Mobile/touch: no hover dependency */
 @media (hover: none) and (pointer: coarse){
   .slide,
   .tile,
   .kb-card{
-    transition:none;
+    transition: none;
   }
+}
+
+/* =========================================================
+   KNOWLEDGE BASE — LUXURY CARD (THIS CARD ONLY)
+   Scope: .kb-card--lux
+   Matches reference-style: dark luxury, centered hierarchy, clean spacing
+========================================================= */
+.kb-card--lux{
+  background: radial-gradient(120% 120% at 50% 0%, #0f1a3a 0%, #060913 55%, #050612 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 26px;
+
+  padding: clamp(18px, 3vw, 28px) clamp(16px, 3vw, 26px);
+  text-align: center;
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+/* Card title */
+.kb-card--lux .kb-title{
+  margin: 6px 0 18px;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: rgba(255,255,255,.95);
+}
+
+/* Items layout */
+.kb-card--lux .kb-items{
+  display: grid;
+  gap: clamp(18px, 2.4vw, 28px);
+  margin: 0;
+}
+
+.kb-card--lux .kb-item{
+  padding: 0;
+}
+
+/* Item headings */
+.kb-card--lux .kb-item-title{
+  margin: 0 0 6px;
+  font-size: clamp(18px, 2.2vw, 28px);
+  line-height: 1.15;
+  font-weight: 750;
+  color: rgba(255,255,255,.92);
+}
+
+/* Sub-line */
+.kb-card--lux .kb-item-sub{
+  margin: 0;
+  font-size: clamp(14px, 1.6vw, 18px);
+  line-height: 1.4;
+  font-weight: 500;
+  color: rgba(255,255,255,.75);
+}
+
+.kb-card--lux .kb-metric{
+  letter-spacing: .2px;
+  color: rgba(255,255,255,.78);
+}
+
+.kb-card--lux .kb-value{
+  font-weight: 750;
+  color: rgba(255,255,255,.92);
+  margin-left: 6px;
+}
+
+/* Keep .kb-body present but visually neutral for this design */
+.kb-card--lux .kb-body{
+  margin-top: clamp(14px, 2vw, 20px);
+  height: 0;
+  border: 0;
+  background: transparent;
 }
 
 /* =========================
@@ -296,6 +411,7 @@ main{ padding-bottom:48px; }
 @media (max-width: 860px){
   .hero-inner{ grid-template-columns: 1fr; }
   .hero-photo{ justify-content:flex-start; }
+  .qcard{ width:104px; height:104px; }
   .kb-grid{ grid-template-columns:1fr; }
   .carousel{ grid-template-columns: 36px 1fr 36px; }
   .car-btn{ width:36px; height:36px; }
