@@ -1,9 +1,9 @@
-/* =========================
-   Base
-========================= */
+/* =========================================================
+   COLUMN 01 — Base
+========================================================= */
 :root{
   --nav:#1d4f86;
-  --panel:#7fa6cf;
+  --panel:#7fa6cf;   /* “Saphire veil” */
   --card:#2e5f96;
   --ink:#0b1b2b;
   --muted:rgba(11,27,43,.7);
@@ -16,9 +16,9 @@ html,body{ margin:0; padding:0; font-family:system-ui, -apple-system, Segoe UI, 
 a{ color:inherit; text-decoration:none; }
 main{ padding-bottom:48px; }
 
-/* =========================
-   Header / Nav
-========================= */
+/* =========================================================
+   COLUMN 02 — Header / Nav
+========================================================= */
 .site-header{
   position:sticky; top:0; z-index:20;
   background:var(--nav);
@@ -37,10 +37,8 @@ main{ padding-bottom:48px; }
 .brand{ color:var(--white); font-weight:700; letter-spacing:.2px; }
 .nav-link{ color:rgba(255,255,255,.9); font-weight:500; }
 .nav-link:hover{ text-decoration:underline; }
-
 .nav-right{ display:flex; align-items:center; gap:10px; }
 
-/* Buttons */
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
   padding:10px 14px;
@@ -51,21 +49,14 @@ main{ padding-bottom:48px; }
   background:transparent;
   color:var(--white);
 }
-.btn-solid{
-  background:var(--white);
-  color:#0b1b2b;
-  border-color:var(--white);
-}
+.btn-solid{ background:var(--white); color:#0b1b2b; border-color:var(--white); }
 .btn-ghost:hover{ background:rgba(255,255,255,.12); }
 .btn-solid:hover{ filter:brightness(.96); }
 
-/* =========================
-   Hero
-========================= */
-.hero{
-  background:var(--panel);
-  padding:26px 18px;
-}
+/* =========================================================
+   COLUMN 03 — Hero
+========================================================= */
+.hero{ background:var(--panel); padding:26px 18px; }
 .hero-inner{
   max-width:1100px;
   margin:0 auto;
@@ -81,15 +72,8 @@ main{ padding-bottom:48px; }
   color:var(--white);
   font-weight:800;
 }
-.sub{
-  margin:0 0 18px 0;
-  color:rgba(255,255,255,.85);
-  font-weight:600;
-}
-.hero-photo{
-  display:flex;
-  justify-content:flex-end;
-}
+.sub{ margin:0 0 18px 0; color:rgba(255,255,255,.85); font-weight:600; }
+.hero-photo{ display:flex; justify-content:flex-end; }
 .photo-placeholder{
   width:min(360px, 100%);
   height:220px;
@@ -104,45 +88,33 @@ main{ padding-bottom:48px; }
 }
 
 /* Quick cards under hero */
-.quick-cards{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-top:10px;
-}
+.quick-cards{ display:flex; gap:14px; flex-wrap:wrap; margin-top:10px; }
 .qcard{
-  width:110px;
-  height:110px;
+  width:110px; height:110px;
   background:var(--card);
   border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex; align-items:center; justify-content:center;
   color:var(--white);
   font-weight:700;
   box-shadow: var(--shadow);
 }
 .qcard:hover{ filter:brightness(.96); }
 
-/* =========================
-   Generic sections
-========================= */
+/* =========================================================
+   COLUMN 04 — Generic Sections
+========================================================= */
 .section{
   max-width:1100px;
   margin:26px auto;
   padding:0 18px;
   text-align:center;
 }
-.section-title{
-  margin:0 0 12px 0;
-  font-size:18px;
-  font-weight:800;
-}
+.section-title{ margin:0 0 12px 0; font-size:18px; font-weight:800; }
 .muted{ color:var(--muted); }
 
-/* =========================
-   Carousel (CSS scroll-snap)
-========================= */
+/* =========================================================
+   COLUMN 05 — Carousel (CSS scroll-snap)
+========================================================= */
 .carousel{
   display:grid;
   grid-template-columns: 44px 1fr 44px;
@@ -157,7 +129,7 @@ main{ padding-bottom:48px; }
   box-shadow: var(--shadow);
   font-size:24px;
   line-height:1;
-  cursor:default; /* decorative only */
+  cursor:default;
   color:rgba(11,27,43,.6);
 }
 .car-track{
@@ -186,22 +158,14 @@ main{ padding-bottom:48px; }
 }
 .slide{ background:#ffffff; color:rgba(11,27,43,.7); border:1px solid rgba(11,27,43,.1); }
 
-.dots{
-  margin-top:10px;
-  display:flex;
-  justify-content:center;
-  gap:8px;
-}
-.dot{
-  width:10px; height:10px;
-  border-radius:999px;
-  border:1px solid rgba(11,27,43,.25);
-  background:transparent;
-}
+.dots{ margin-top:10px; display:flex; justify-content:center; gap:8px; }
+.dot{ width:10px; height:10px; border-radius:999px; border:1px solid rgba(11,27,43,.25); background:transparent; }
 
-/* =========================
-   Knowledge Base Panel
-========================= */
+/* =========================================================
+   COLUMN 06 — Knowledge Base (UPDATED)
+   Fix: ensure cards are 3 columns evenly on desktop
+   Theme: keep “Saphire veil” (no black card override)
+========================================================= */
 .panel{
   background:var(--panel);
   padding:26px 18px 30px;
@@ -214,13 +178,18 @@ main{ padding-bottom:48px; }
   font-size:18px;
   font-weight:900;
 }
+
+/* KB Grid: 3 columns by default */
 .kb-grid{
   max-width:1100px;
   margin:0 auto;
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap:18px;
+  align-items:stretch;
 }
+
+/* KB Card: keep original theme (white card on saphire panel) */
 .kb-card{
   background:#ffffff;
   border-radius:26px;
@@ -228,6 +197,7 @@ main{ padding-bottom:48px; }
   box-shadow: var(--shadow);
   min-height:260px;
 }
+
 .kb-card h3{
   margin:0 0 14px 0;
   color:#1d4f86;
@@ -235,6 +205,7 @@ main{ padding-bottom:48px; }
   font-weight:900;
   text-align:center;
 }
+
 .kb-body{
   height:190px;
   border-radius:22px;
@@ -242,25 +213,69 @@ main{ padding-bottom:48px; }
   background:#ffffff;
 }
 
-/* =========================
-   Certifications banner
-========================= */
+/* IMPORTANT: Revert any black “lux” override if present */
+.kb-card--lux{
+  background:#ffffff;
+  border:none;
+  box-shadow: var(--shadow);
+}
+
+/* =========================================================
+   COLUMN 07 — Luxury 3D Hover (kept, scoped safely)
+========================================================= */
+.car-track,
+.kb-grid{
+  perspective: 900px;
+  perspective-origin: center;
+  transform-style: preserve-3d;
+}
+
+.slide,
+.tile,
+.kb-card{
+  transform: translate3d(0,0,0);
+  transition:
+    transform 380ms cubic-bezier(.2,.8,.2,1),
+    box-shadow 380ms cubic-bezier(.2,.8,.2,1),
+    filter 380ms cubic-bezier(.2,.8,.2,1);
+  will-change: transform, box-shadow;
+}
+
+@media (hover: hover) and (pointer: fine){
+  .slide:hover,
+  .tile:hover,
+  .kb-card:hover{
+    transform: translate3d(0,-3px,14px);
+    box-shadow:
+      0 14px 34px rgba(0,0,0,.12),
+      0 4px 10px rgba(0,0,0,.06);
+    filter: brightness(1.01);
+  }
+}
+
+@media (hover: none) and (pointer: coarse){
+  .slide,
+  .tile,
+  .kb-card{
+    transition: none;
+  }
+}
+
+/* =========================================================
+   COLUMN 08 — Certifications Banner
+========================================================= */
 .banner{
   background:var(--panel);
   padding:28px 18px;
   margin:26px 0;
   text-align:center;
 }
-.banner h2{
-  margin:0 0 8px 0;
-  color:var(--white);
-  font-weight:900;
-}
+.banner h2{ margin:0 0 8px 0; color:var(--white); font-weight:900; }
 .banner p{ margin:0; color:rgba(255,255,255,.9); font-weight:600; }
 
-/* =========================
-   Footer
-========================= */
+/* =========================================================
+   COLUMN 09 — Footer
+========================================================= */
 .footer{
   max-width:1100px;
   margin:26px auto 0;
@@ -278,141 +293,21 @@ main{ padding-bottom:48px; }
 .footer-link{ color:#1d4f86; text-decoration:underline; }
 
 /* =========================================================
-   LUXURY 3D HOVER — CURRENTLY WORKING / PROJECTS / BLOGS / KB
-   Applies to:
-   - Currently Working On cards: .slide
-   - Projects cards: .tile
-   - Blogs/Notes cards: .tile
-   - Knowledge Base cards: .kb-card (including kb-card--lux)
-   Safe, subtle, desktop-only; degrades on mobile
+   COLUMN 10 — Responsive
+   KB: 3 columns desktop -> 2 columns tablet -> 1 column mobile
 ========================================================= */
-
-/* 3D contexts (do not affect layout) */
-.car-track,
-.kb-grid{
-  perspective: 900px;
-  perspective-origin: center;
-  transform-style: preserve-3d;
-}
-
-/* Base interaction layer */
-.slide,
-.tile,
-.kb-card{
-  transform: translate3d(0,0,0);
-  transition:
-    transform 380ms cubic-bezier(.2,.8,.2,1),
-    box-shadow 380ms cubic-bezier(.2,.8,.2,1),
-    filter 380ms cubic-bezier(.2,.8,.2,1);
-  will-change: transform, box-shadow;
-}
-
-/* Desktop hover only */
-@media (hover: hover) and (pointer: fine){
-  .slide:hover,
-  .tile:hover,
-  .kb-card:hover{
-    transform: translate3d(0,-3px,14px);
-    box-shadow:
-      0 14px 34px rgba(0,0,0,.12),
-      0 4px 10px rgba(0,0,0,.06);
-    filter: brightness(1.01);
-  }
-}
-
-/* Mobile/touch: no hover dependency */
-@media (hover: none) and (pointer: coarse){
-  .slide,
-  .tile,
-  .kb-card{
-    transition: none;
-  }
-}
-
-/* =========================================================
-   KNOWLEDGE BASE — LUXURY CARD (THIS CARD ONLY)
-   Scope: .kb-card--lux
-   Matches reference-style: dark luxury, centered hierarchy, clean spacing
-========================================================= */
-.kb-card--lux{
-  background: radial-gradient(120% 120% at 50% 0%, #0f1a3a 0%, #060913 55%, #050612 100%);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 26px;
-
-  padding: clamp(18px, 3vw, 28px) clamp(16px, 3vw, 26px);
-  text-align: center;
-
-  box-shadow:
-    0 18px 45px rgba(0,0,0,.35),
-    inset 0 1px 0 rgba(255,255,255,.06);
-}
-
-/* Card title */
-.kb-card--lux .kb-title{
-  margin: 6px 0 18px;
-  font-size: clamp(28px, 3.6vw, 44px);
-  line-height: 1.05;
-  font-weight: 800;
-  letter-spacing: .2px;
-  color: rgba(255,255,255,.95);
-}
-
-/* Items layout */
-.kb-card--lux .kb-items{
-  display: grid;
-  gap: clamp(18px, 2.4vw, 28px);
-  margin: 0;
-}
-
-.kb-card--lux .kb-item{
-  padding: 0;
-}
-
-/* Item headings */
-.kb-card--lux .kb-item-title{
-  margin: 0 0 6px;
-  font-size: clamp(18px, 2.2vw, 28px);
-  line-height: 1.15;
-  font-weight: 750;
-  color: rgba(255,255,255,.92);
-}
-
-/* Sub-line */
-.kb-card--lux .kb-item-sub{
-  margin: 0;
-  font-size: clamp(14px, 1.6vw, 18px);
-  line-height: 1.4;
-  font-weight: 500;
-  color: rgba(255,255,255,.75);
-}
-
-.kb-card--lux .kb-metric{
-  letter-spacing: .2px;
-  color: rgba(255,255,255,.78);
-}
-
-.kb-card--lux .kb-value{
-  font-weight: 750;
-  color: rgba(255,255,255,.92);
-  margin-left: 6px;
-}
-
-/* Keep .kb-body present but visually neutral for this design */
-.kb-card--lux .kb-body{
-  margin-top: clamp(14px, 2vw, 20px);
-  height: 0;
-  border: 0;
-  background: transparent;
-}
-
-/* =========================
-   Responsive
-========================= */
 @media (max-width: 860px){
   .hero-inner{ grid-template-columns: 1fr; }
   .hero-photo{ justify-content:flex-start; }
   .qcard{ width:104px; height:104px; }
-  .kb-grid{ grid-template-columns:1fr; }
   .carousel{ grid-template-columns: 36px 1fr 36px; }
   .car-btn{ width:36px; height:36px; }
+
+  /* KB: 2 columns for mid screens */
+  .kb-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px){
+  /* KB: 1 column for small screens */
+  .kb-grid{ grid-template-columns: 1fr; }
 }
