@@ -161,49 +161,78 @@ main{ padding-bottom:48px; }
 .dots{ margin-top:10px; display:flex; justify-content:center; gap:8px; }
 .dot{ width:10px; height:10px; border-radius:999px; border:1px solid rgba(11,27,43,.25); background:transparent; }
 
-/* =========================================================
-   COLUMN 06 — Knowledge Base (UPDATED)
-   Fix: ensure cards are 3 columns evenly on desktop
-   Theme: keep “Saphire veil” (no black card override)
-========================================================= */
+/* =========================
+   Knowledge Base Section (layout + background)
+   Scope: .panel + .panel-title + .kb-grid ONLY
+========================= */
 .panel{
-  background:var(--panel);
-  padding:26px 18px 30px;
-  margin:22px 0;
+  background: var(--panel);              /* light blue section bg */
+  padding: 34px 18px 38px;               /* more breathing room like reference */
+  margin: 22px 0;
 }
+
 .panel-title{
-  text-align:center;
-  margin:0 0 16px 0;
-  color:var(--white);
-  font-size:18px;
-  font-weight:900;
+  text-align: center;
+  margin: 0 0 22px;
+  color: rgba(255,255,255,.95);
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 900;
+  letter-spacing: .2px;
 }
 
-/* KB Grid: 3 columns by default */
+/* =========================
+   Knowledge Base Cards Grid (3/2/1 columns)
+   Scope: .kb-grid ONLY
+========================= */
 .kb-grid{
-  max-width:1100px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap:18px;
-  align-items:stretch;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* Desktop: 3 columns */
+  gap: 28px;                                       /* even spacing between cards */
+  align-items: stretch;
 }
 
-/* KB Card: keep original theme (white card on saphire panel) */
+/* Tablet */
+@media (max-width: 860px){
+  .kb-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px){
+  .kb-grid{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* =========================
+   Knowledge Base Cards (tall + pill radius + centered title)
+   Scope: .kb-card + .kb-card h3 ONLY
+========================= */
 .kb-card{
-  background:#ffffff;
-  border-radius:26px;
-  padding:18px 16px;
+  background: #ffffff;
+  border-radius: 46px;                 /* pill-like corners */
+  padding: 30px 24px;                  /* top space for title */
+  min-height: 520px;                   /* tall vertical proportion */
   box-shadow: var(--shadow);
-  min-height:260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;                 /* centers title horizontally */
+  justify-content: flex-start;         /* keeps title near top */
 }
 
+/* Title placement & style */
 .kb-card h3{
-  margin:0 0 14px 0;
-  color:#1d4f86;
-  font-size:18px;
-  font-weight:900;
-  text-align:center;
+  margin: 6px 0 0;
+  text-align: center;
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 900;
+  color: #1d4f86;
+  letter-spacing: .2px;
 }
 
 .kb-body{
