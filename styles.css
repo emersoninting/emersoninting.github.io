@@ -162,82 +162,92 @@ main{ padding-bottom:48px; }
 .dot{ width:10px; height:10px; border-radius:999px; border:1px solid rgba(11,27,43,.25); background:transparent; }
 
 /* =========================================================
-   COLUMN 06 — Knowledge Base (MATCH REFERENCE)
-   Desktop: 3 cards in one row, tall pills, centered title
+   COLUMN 06 — Knowledge Base (MATCH REFERENCE EXACT)
+   Scope: .panel, .panel-title, .kb-grid, .kb-card only
 ========================================================= */
+
+/* Knowledge Base section background + spacing */
 .panel{
   background: var(--panel);
-  padding: 34px 18px 38px;
+  padding: 48px 0 56px;                 /* full-width blue band like reference */
   margin: 22px 0;
 }
 
+/* Center the section title above cards */
 .panel-title{
   text-align: center;
-  margin: 0 0 22px;
+  margin: 0 0 34px;
   color: rgba(255,255,255,.95);
-  font-size: clamp(18px, 2.2vw, 26px);
+  font-size: clamp(22px, 2.6vw, 34px);
   font-weight: 900;
   letter-spacing: .2px;
 }
 
-/* KB grid: 3 columns by default */
+/* Cards row spacing and alignment */
 .kb-grid{
-  max-width: 1100px;
+  max-width: 1180px;                    /* a bit wider like reference */
   margin: 0 auto;
+  padding: 0 56px;                      /* wide side gutters */
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* Desktop: 3 in one row */
+  gap: 68px;                            /* even wide spacing between cards */
   align-items: stretch;
 }
 
-/* KB card: tall pill with centered top title */
+/* Tall pill cards */
 .kb-card{
   background: #ffffff;
-  border-radius: 46px;
-  padding: 30px 24px;
-  min-height: 520px;
-  box-shadow: var(--shadow);
+  border-radius: 64px;                  /* large pill radius */
+  padding: 46px 34px 36px;              /* top padding positions title */
+  min-height: 560px;                    /* tall vertical proportion */
+  box-shadow: none;                     /* reference shows flat/clean */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;                  /* title centered horizontally */
   justify-content: flex-start;
 }
 
+/* Title inside each card: centered near top */
 .kb-card h3{
-  margin: 6px 0 0;
+  margin: 10px 0 0;
   text-align: center;
-  font-size: clamp(22px, 2.2vw, 30px);
+  font-size: clamp(26px, 2.4vw, 34px);
   font-weight: 900;
-  color: #1d4f86;
+  color: #2e5f96;                       /* matches your theme */
   letter-spacing: .2px;
 }
 
-/* keep existing body element (if used later) */
-.kb-body{
-  height:190px;
-  border-radius:22px;
-  border:1px solid rgba(11,27,43,.12);
-  background:#ffffff;
+/* Keep kb-body from affecting the look */
+.kb-card .kb-body{
+  height: 0;
+  border: 0;
+  background: transparent;
+  margin: 0;
+  padding: 0;
 }
 
-/* IMPORTANT: force theme back if any “lux” class exists */
-.kb-card--lux{
-  background:#ffffff;
-  border:none;
-  box-shadow: var(--shadow);
-}
-
-/* KB responsiveness: Tablet 2 cols, Mobile 1 col */
+/* Responsiveness: Tablet 2 columns, Mobile 1 column */
 @media (max-width: 1024px){
   .kb-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+    gap: 40px;
+    padding: 0 28px;
+  }
+  .kb-card{
+    min-height: 520px;
+    border-radius: 56px;
   }
 }
+
 @media (max-width: 768px){
   .kb-grid{
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 24px;
+    padding: 0 18px;
+  }
+  .kb-card{
+    min-height: 480px;
+    border-radius: 48px;
   }
 }
 
