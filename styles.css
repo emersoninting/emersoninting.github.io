@@ -1,335 +1,157 @@
-/* =========================================================
-   COLUMN 01 — Base
-========================================================= */
+/* =========================
+   01) Base / Variables
+========================= */
 :root{
-  --nav:#1d4f86;
-  --panel:#7fa6cf;   /* “Saphire veil” */
-  --card:#2e5f96;
+  --bg:#ffffff;
+  --surface:#f6f7fb;
   --ink:#0b1b2b;
-  --muted:rgba(11,27,43,.7);
-  --white:#ffffff;
-  --shadow: 0 10px 25px rgba(0,0,0,.08);
+  --muted:rgba(11,27,43,.72);
+  --line:rgba(11,27,43,.12);
+
+  --brand:#1d4f86;
+  --brand-2:#2e5f96;
+
+  --radius:16px;
+  --shadow: 0 18px 40px rgba(0,0,0,.10);
 }
 
 *{ box-sizing:border-box; }
-html,body{ margin:0; padding:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:#ffffff; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.55;
+}
 a{ color:inherit; text-decoration:none; }
-main{ padding-bottom:48px; }
+a:hover{ text-decoration:underline; }
+img{ max-width:100%; display:block; }
+ul{ margin:0.5rem 0 0; padding-left:1.2rem; }
 
-/* =========================================================
-   COLUMN 02 — Header / Nav
-========================================================= */
+/* =========================
+   02) Container / Sections
+========================= */
+.container{
+  width:min(1100px, 92vw);
+  margin-inline:auto;
+}
+.section{
+  padding: 72px 0;
+}
+.section h2{
+  margin:0 0 8px;
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  letter-spacing:-0.02em;
+}
+.section-lead{
+  margin:0 0 22px;
+  color:var(--muted);
+  max-width: 70ch;
+}
+
+/* =========================
+   03) Header / Nav
+========================= */
 .site-header{
-  position:sticky; top:0; z-index:20;
-  background:var(--nav);
-  box-shadow: 0 2px 0 rgba(255,255,255,.15);
+  position: sticky;
+  top:0;
+  z-index: 50;
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
 }
 .nav{
-  max-width:1100px;
-  margin:0 auto;
-  padding:14px 18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:18px;
+  padding: 14px 0;
 }
-.nav-left{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
-.brand{ color:var(--white); font-weight:700; letter-spacing:.2px; }
-.nav-link{ color:rgba(255,255,255,.9); font-weight:500; }
-.nav-link:hover{ text-decoration:underline; }
-.nav-right{ display:flex; align-items:center; gap:10px; }
+.brand{
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap: 18px;
+  padding:0;
+  margin:0;
+}
+.nav-links a{
+  color: var(--muted);
+  font-weight: 600;
+}
+.nav-links a:hover{ color: var(--ink); text-decoration:none; }
 
+/* =========================
+   04) Hero
+========================= */
+.hero{
+  padding: 92px 0 78px;
+  background: linear-gradient(180deg, rgba(29,79,134,.08), transparent 55%);
+}
+.eyebrow{
+  margin:0 0 10px;
+  color: var(--brand);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-size: .82rem;
+}
+.hero-title{
+  margin:0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+.hero-subtitle{
+  margin: 14px 0 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+.hero-cta{
+  display:flex;
+  gap: 12px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   05) Buttons
+========================= */
 .btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:10px 14px;
-  border-radius:10px;
-  font-weight:600;
-  line-height:1;
-  border:1px solid rgba(255,255,255,.35);
-  background:transparent;
-  color:var(--white);
-}
-.btn-solid{ background:var(--white); color:#0b1b2b; border-color:var(--white); }
-.btn-ghost:hover{ background:rgba(255,255,255,.12); }
-.btn-solid:hover{ filter:brightness(.96); }
-
-/* =========================================================
-   COLUMN 03 — Hero
-========================================================= */
-.hero{ background:var(--panel); padding:26px 18px; }
-.hero-inner{
-  max-width:1100px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap:18px;
-  align-items:center;
-}
-.hero-copy h1{
-  margin:0 0 8px 0;
-  font-size:clamp(28px, 4vw, 44px);
-  line-height:1.05;
-  color:var(--white);
-  font-weight:800;
-}
-.sub{ margin:0 0 18px 0; color:rgba(255,255,255,.85); font-weight:600; }
-.hero-photo{ display:flex; justify-content:flex-end; }
-.photo-placeholder{
-  width:min(360px, 100%);
-  height:220px;
-  background:#ffffff;
-  border-radius:22px;
-  display:flex;
+  display:inline-flex;
   align-items:center;
   justify-content:center;
-  box-shadow: var(--shadow);
-  font-weight:700;
-  color:rgba(11,27,43,.55);
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-weight: 700;
+  text-decoration:none;
+}
+.btn:hover{ text-decoration:none; box-shadow: 0 10px 22px rgba(0,0,0,.10); }
+.btn.primary{
+  background: var(--brand);
+  border-color: transparent;
+  color: #fff;
 }
 
-/* Quick cards under hero */
-.quick-cards{ display:flex; gap:14px; flex-wrap:wrap; margin-top:10px; }
-.qcard{
-  width:110px; height:110px;
-  background:var(--card);
-  border-radius:12px;
-  display:flex; align-items:center; justify-content:center;
-  color:var(--white);
-  font-weight:700;
-  box-shadow: var(--shadow);
-}
-.qcard:hover{ filter:brightness(.96); }
-
-/* =========================================================
-   COLUMN 04 — Generic Sections
-========================================================= */
-.section{
-  max-width:1100px;
-  margin:26px auto;
-  padding:0 18px;
-  text-align:center;
-}
-.section-title{ margin:0 0 12px 0; font-size:18px; font-weight:800; }
-.muted{ color:var(--muted); }
-
-/* =========================================================
-   COLUMN 05 — Carousel (CSS scroll-snap)
-========================================================= */
-.carousel{
-  display:grid;
-  grid-template-columns: 44px 1fr 44px;
-  align-items:center;
-  gap:10px;
-}
-.car-btn{
-  width:44px; height:44px;
-  border-radius:999px;
-  border:1px solid rgba(11,27,43,.2);
-  background:#ffffff;
-  box-shadow: var(--shadow);
-  font-size:24px;
-  line-height:1;
-  cursor:default;
-  color:rgba(11,27,43,.6);
-}
-.car-track{
-  display:flex;
-  gap:16px;
-  overflow-x:auto;
-  padding:10px;
-  scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
-}
-.car-track::-webkit-scrollbar{ display:none; }
-
-.slide, .tile{
-  scroll-snap-align:center;
-  flex:0 0 min(280px, 80%);
-  height:140px;
-  border-radius:22px;
-  background:var(--card);
-  color:rgba(255,255,255,.92);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:800;
-  box-shadow: var(--shadow);
-}
-.slide{ background:#ffffff; color:rgba(11,27,43,.7); border:1px solid rgba(11,27,43,.1); }
-
-.dots{ margin-top:10px; display:flex; justify-content:center; gap:8px; }
-.dot{ width:10px; height:10px; border-radius:999px; border:1px solid rgba(11,27,43,.25); background:transparent; }
-
-/* =========================================================
-   COLUMN 06 — Knowledge Base (MATCH REFERENCE EXACT)
-   Scope: .panel, .panel-title, .kb-grid, .kb-card only
-========================================================= */
-
-/* Knowledge Base section background + spacing */
-.panel{
-  background: var(--panel);
-  padding: 48px 0 56px;                 /* full-width blue band like reference */
-  margin: 22px 0;
+/* =========================
+   06) Footer
+========================= */
+.site-footer{
+  border-top: 1px solid var(--line);
+  padding: 22px 0;
+  color: var(--muted);
+  background: #fff;
 }
 
-/* Center the section title above cards */
-.panel-title{
-  text-align: center;
-  margin: 0 0 34px;
-  color: rgba(255,255,255,.95);
-  font-size: clamp(22px, 2.6vw, 34px);
-  font-weight: 900;
-  letter-spacing: .2px;
-}
-
-/* Cards row spacing and alignment */
-.kb-grid{
-  max-width: 1180px;                    /* a bit wider like reference */
-  margin: 0 auto;
-  padding: 0 56px;                      /* wide side gutters */
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* Desktop: 3 in one row */
-  gap: 68px;                            /* even wide spacing between cards */
-  align-items: stretch;
-}
-
-/* Tall pill cards */
-.kb-card{
-  background: #ffffff;
-  border-radius: 64px;                  /* large pill radius */
-  padding: 46px 34px 36px;              /* top padding positions title */
-  min-height: 560px;                    /* tall vertical proportion */
-  box-shadow: none;                     /* reference shows flat/clean */
-  display: flex;
-  flex-direction: column;
-  align-items: center;                  /* title centered horizontally */
-  justify-content: flex-start;
-}
-
-/* Title inside each card: centered near top */
-.kb-card h3{
-  margin: 10px 0 0;
-  text-align: center;
-  font-size: clamp(26px, 2.4vw, 34px);
-  font-weight: 900;
-  color: #2e5f96;                       /* matches your theme */
-  letter-spacing: .2px;
-}
-
-/* Keep kb-body from affecting the look */
-.kb-card .kb-body{
-  height: 0;
-  border: 0;
-  background: transparent;
-  margin: 0;
-  padding: 0;
-}
-
-/* Responsiveness: Tablet 2 columns, Mobile 1 column */
-@media (max-width: 1024px){
-  .kb-grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 40px;
-    padding: 0 28px;
-  }
-  .kb-card{
-    min-height: 520px;
-    border-radius: 56px;
-  }
-}
-
-@media (max-width: 768px){
-  .kb-grid{
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 0 18px;
-  }
-  .kb-card{
-    min-height: 480px;
-    border-radius: 48px;
-  }
-}
-
-/* =========================================================
-   COLUMN 07 — Luxury 3D Hover (global cards)
-========================================================= */
-.car-track,
-.kb-grid{
-  perspective: 900px;
-  perspective-origin: center;
-  transform-style: preserve-3d;
-}
-
-.slide,
-.tile,
-.kb-card{
-  transform: translate3d(0,0,0);
-  transition:
-    transform 380ms cubic-bezier(.2,.8,.2,1),
-    box-shadow 380ms cubic-bezier(.2,.8,.2,1),
-    filter 380ms cubic-bezier(.2,.8,.2,1);
-  will-change: transform, box-shadow;
-}
-
-@media (hover: hover) and (pointer: fine){
-  .slide:hover,
-  .tile:hover,
-  .kb-card:hover{
-    transform: translate3d(0,-3px,14px);
-    box-shadow:
-      0 14px 34px rgba(0,0,0,.12),
-      0 4px 10px rgba(0,0,0,.06);
-    filter: brightness(1.01);
-  }
-}
-
-@media (hover: none) and (pointer: coarse){
-  .slide,
-  .tile,
-  .kb-card{
-    transition: none;
-  }
-}
-
-/* =========================================================
-   COLUMN 08 — Certifications Banner
-========================================================= */
-.banner{
-  background:var(--panel);
-  padding:28px 18px;
-  margin:26px 0;
-  text-align:center;
-}
-.banner h2{ margin:0 0 8px 0; color:var(--white); font-weight:900; }
-.banner p{ margin:0; color:rgba(255,255,255,.9); font-weight:600; }
-
-/* =========================================================
-   COLUMN 09 — Footer
-========================================================= */
-.footer{
-  max-width:1100px;
-  margin:26px auto 0;
-  padding:0 18px;
-}
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  gap:18px;
-  padding:16px 0;
-  border-top:1px solid rgba(11,27,43,.12);
-  color:rgba(11,27,43,.7);
-  font-weight:700;
-}
-.footer-link{ color:#1d4f86; text-decoration:underline; }
-
-/* =========================================================
-   COLUMN 10 — Responsive (Global)
-========================================================= */
-@media (max-width: 860px){
-  .hero-inner{ grid-template-columns: 1fr; }
-  .hero-photo{ justify-content:flex-start; }
-  .qcard{ width:104px; height:104px; }
-  .carousel{ grid-template-columns: 36px 1fr 36px; }
-  .car-btn{ width:36px; height:36px; }
+/* =========================
+   07) Responsive (Nav)
+========================= */
+@media (max-width: 700px){
+  .nav{ gap: 14px; }
+  .nav-links{ gap: 12px; font-size: .95rem; }
 }
