@@ -161,13 +161,13 @@ main{ padding-bottom:48px; }
 .dots{ margin-top:10px; display:flex; justify-content:center; gap:8px; }
 .dot{ width:10px; height:10px; border-radius:999px; border:1px solid rgba(11,27,43,.25); background:transparent; }
 
-/* =========================
-   Knowledge Base Section (layout + background)
-   Scope: .panel + .panel-title + .kb-grid ONLY
-========================= */
+/* =========================================================
+   COLUMN 06 — Knowledge Base (MATCH REFERENCE)
+   Desktop: 3 cards in one row, tall pills, centered title
+========================================================= */
 .panel{
-  background: var(--panel);              /* light blue section bg */
-  padding: 34px 18px 38px;               /* more breathing room like reference */
+  background: var(--panel);
+  padding: 34px 18px 38px;
   margin: 22px 0;
 }
 
@@ -180,52 +180,29 @@ main{ padding-bottom:48px; }
   letter-spacing: .2px;
 }
 
-/* =========================
-   Knowledge Base Cards Grid (3/2/1 columns)
-   Scope: .kb-grid ONLY
-========================= */
+/* KB grid: 3 columns by default */
 .kb-grid{
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* Desktop: 3 columns */
-  gap: 28px;                                       /* even spacing between cards */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
   align-items: stretch;
 }
 
-/* Tablet */
-@media (max-width: 860px){
-  .kb-grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 640px){
-  .kb-grid{
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-}
-
-/* =========================
-   Knowledge Base Cards (tall + pill radius + centered title)
-   Scope: .kb-card + .kb-card h3 ONLY
-========================= */
+/* KB card: tall pill with centered top title */
 .kb-card{
   background: #ffffff;
-  border-radius: 46px;                 /* pill-like corners */
-  padding: 30px 24px;                  /* top space for title */
-  min-height: 520px;                   /* tall vertical proportion */
+  border-radius: 46px;
+  padding: 30px 24px;
+  min-height: 520px;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  align-items: center;                 /* centers title horizontally */
-  justify-content: flex-start;         /* keeps title near top */
+  align-items: center;
+  justify-content: flex-start;
 }
 
-/* Title placement & style */
 .kb-card h3{
   margin: 6px 0 0;
   text-align: center;
@@ -235,6 +212,7 @@ main{ padding-bottom:48px; }
   letter-spacing: .2px;
 }
 
+/* keep existing body element (if used later) */
 .kb-body{
   height:190px;
   border-radius:22px;
@@ -242,15 +220,29 @@ main{ padding-bottom:48px; }
   background:#ffffff;
 }
 
-/* IMPORTANT: Revert any black “lux” override if present */
+/* IMPORTANT: force theme back if any “lux” class exists */
 .kb-card--lux{
   background:#ffffff;
   border:none;
   box-shadow: var(--shadow);
 }
 
+/* KB responsiveness: Tablet 2 cols, Mobile 1 col */
+@media (max-width: 1024px){
+  .kb-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+@media (max-width: 768px){
+  .kb-grid{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
 /* =========================================================
-   COLUMN 07 — Luxury 3D Hover (kept, scoped safely)
+   COLUMN 07 — Luxury 3D Hover (global cards)
 ========================================================= */
 .car-track,
 .kb-grid{
@@ -322,8 +314,7 @@ main{ padding-bottom:48px; }
 .footer-link{ color:#1d4f86; text-decoration:underline; }
 
 /* =========================================================
-   COLUMN 10 — Responsive
-   KB: 3 columns desktop -> 2 columns tablet -> 1 column mobile
+   COLUMN 10 — Responsive (Global)
 ========================================================= */
 @media (max-width: 860px){
   .hero-inner{ grid-template-columns: 1fr; }
@@ -331,12 +322,4 @@ main{ padding-bottom:48px; }
   .qcard{ width:104px; height:104px; }
   .carousel{ grid-template-columns: 36px 1fr 36px; }
   .car-btn{ width:36px; height:36px; }
-
-  /* KB: 2 columns for mid screens */
-  .kb-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 640px){
-  /* KB: 1 column for small screens */
-  .kb-grid{ grid-template-columns: 1fr; }
 }
