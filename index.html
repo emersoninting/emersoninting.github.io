@@ -3,154 +3,146 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Emerson Inting | Landing Page</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Your Name | Portfolio</title>
+  <meta name="description" content="Portfolio landing page showcasing projects and credentials." />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header class="site-header">
-    <nav class="nav">
-      <div class="nav-left">
-        <a class="brand" href="#top">Emerson Inting</a>
-        <a class="nav-link" href="#projects">Project</a>
-        <a class="nav-link" href="#certifications">Certifications</a>
-      </div>
 
-      <div class="nav-right">
-        <a class="btn btn-ghost" href="#contact">Connect</a>
-        <a class="btn btn-solid" href="cv.pdf" download>Download CV</a>
-      </div>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top">Your Name</a>
+
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#credentials">Credentials</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <h1>Create some Sample<br />headline here</h1>
-          <p class="sub">Call to action</p>
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="container">
+        <p class="eyebrow">Computer Engineer • Network Security • Builder</p>
+        <h1 class="hero-title">Showcasing Projects and Credentials</h1>
+        <p class="hero-subtitle">
+          Short value statement about what you build and who you help.
+        </p>
 
-          <div class="quick-cards">
-            <a class="qcard" href="#" aria-label="LinkedIn">LinkedIn</a>
-            <a class="qcard" href="#" aria-label="YouTube">YouTube</a>
-            <a class="qcard" href="#contact" aria-label="Contact Details">Contact Details</a>
-          </div>
-        </div>
-
-        <div class="hero-photo" aria-label="Profile photo placeholder">
-          <div class="photo-placeholder">Photo</div>
+        <div class="hero-cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact</a>
         </div>
       </div>
     </section>
 
-    <!-- CURRENTLY WORKING -->
-    <section class="section">
-      <h2 class="section-title">Currently working section</h2>
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="section-lead">Selected work with brief outcomes.</p>
 
-      <div class="carousel">
-        <button class="car-btn" type="button" aria-label="Previous (decorative)">‹</button>
-        <div class="car-track" aria-label="Currently working items">
-          <article class="slide">Item 01</article>
-          <article class="slide">Item 02</article>
-          <article class="slide">Item 03</article>
-          <article class="slide">Item 04</article>
-        </div>
-        <button class="car-btn" type="button" aria-label="Next (decorative)">›</button>
-      </div>
-
-      <div class="dots" aria-label="Carousel indicators (decorative)">
-        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-      </div>
-    </section>
-
-    <!-- KNOWLEDGE BASE -->
-    <section class="panel">
-      <h2 class="panel-title">Knowledge Base</h2>
-
-<div class="kb-card kb-card--lux">
-  <h3 class="kb-title">Communications</h3>
-      
-          <div class="kb-items">
-            <div class="kb-item">
-              <h4 class="kb-item-title">ToastMasters Club</h4>
-              <p class="kb-item-sub"><span class="kb-metric">Best speech</span> <span class="kb-value">2+</span></p>
+        <div class="grid">
+          <article class="card">
+            <h3>Project Title</h3>
+            <p>One-sentence description of what it does and why it matters.</p>
+            <div class="card-links">
+              <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="#" target="_blank" rel="noreferrer">Live Demo</a>
             </div>
-        
-            <div class="kb-item">
-              <h4 class="kb-item-title">YouTube</h4>
-              <p class="kb-item-sub"><span class="kb-metric">Videos</span> <span class="kb-value">69+</span></p>
+          </article>
+
+          <article class="card">
+            <h3>Project Title</h3>
+            <p>One-sentence description of what it does and why it matters.</p>
+            <div class="card-links">
+              <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="#" target="_blank" rel="noreferrer">Live Demo</a>
             </div>
-          </div>
-        
-          <div class="kb-body"></div>
-        </div>
-        </div>
+          </article>
 
-        
-        <div class="kb-card">
-          <h3>Network &amp; Security</h3>
-          <div class="kb-body"></div>
-        </div>
-        <div class="kb-card">
-          <h3>Automation</h3>
-          <div class="kb-body"></div>
+          <article class="card">
+            <h3>Project Title</h3>
+            <p>One-sentence description of what it does and why it matters.</p>
+            <div class="card-links">
+              <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="#" target="_blank" rel="noreferrer">Live Demo</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <h2 class="section-title">Projects</h2>
+    <!-- Credentials -->
+    <section id="credentials" class="section">
+      <div class="container">
+        <h2>Credentials</h2>
+        <p class="section-lead">Skills, certifications, and highlights.</p>
 
-      <div class="carousel">
-        <button class="car-btn" type="button" aria-label="Previous (decorative)">‹</button>
-        <div class="car-track">
-          <article class="tile">Project 01</article>
-          <article class="tile">Project 02</article>
-          <article class="tile">Project 03</article>
-          <article class="tile">Project 04</article>
+        <div class="grid">
+          <article class="card">
+            <h3>Certifications</h3>
+            <ul>
+              <li>Security+ (In Progress)</li>
+              <li>ISO 27001 (Interest)</li>
+              <li>FortiGate / Cisco (Lab)</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Core Skills</h3>
+            <ul>
+              <li>Network Security</li>
+              <li>Infrastructure</li>
+              <li>Documentation & Proposals</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Tools</h3>
+            <ul>
+              <li>FortiGate, Cisco</li>
+              <li>VirtualBox</li>
+              <li>Power BI / Google Sheets</li>
+            </ul>
+          </article>
         </div>
-        <button class="car-btn" type="button" aria-label="Next (decorative)">›</button>
-      </div>
-
-      <div class="dots" aria-label="Carousel indicators (decorative)">
-        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
       </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
-    <section class="banner" id="certifications">
-      <h2>Certifications</h2>
-      <p class="muted">Add your badges or list items here.</p>
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p class="section-lead">
+          A short, professional summary of who you are and what you are building.
+        </p>
+      </div>
     </section>
 
-    <!-- BLOGS/NOTES -->
-    <section class="section">
-      <h2 class="section-title">Blogs/Notes</h2>
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="section-lead">Best ways to reach you.</p>
 
-      <div class="carousel">
-        <button class="car-btn" type="button" aria-label="Previous (decorative)">‹</button>
-        <div class="car-track">
-          <article class="tile">Note 01</article>
-          <article class="tile">Note 02</article>
-          <article class="tile">Note 03</article>
-          <article class="tile">Note 04</article>
+        <div class="contact-box">
+          <p><strong>Email:</strong> <a href="mailto:your@email.com">your@email.com</a></p>
+          <p><strong>GitHub:</strong> <a href="#" target="_blank" rel="noreferrer">github.com/yourusername</a></p>
+          <p><strong>LinkedIn:</strong> <a href="#" target="_blank" rel="noreferrer">linkedin.com/in/yourprofile</a></p>
         </div>
-        <button class="car-btn" type="button" aria-label="Next (decorative)">›</button>
-      </div>
-
-      <div class="dots" aria-label="Carousel indicators (decorative)">
-        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
       </div>
     </section>
-
-    <!-- FOOTER -->
-    <footer class="footer" id="contact">
-      <div class="footer-inner">
-        <div>Thank you note</div>
-        <div><a class="footer-link" href="mailto:you@example.com">Contact</a></div>
-      </div>
-    </footer>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year">2026</span> Your Name. All rights reserved.</small>
+    </div>
+  </footer>
 </body>
 </html>
