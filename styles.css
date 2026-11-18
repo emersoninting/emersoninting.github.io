@@ -168,3 +168,14 @@ body{background:var(--bg);color:var(--ink);font-size:15.5px;line-height:1.7;-web
     grid-row:2;
   }
 }
+
+
+/* Image-free hero: restore balanced full-width introduction */
+.hero-grid.hero-text-only{display:block;max-width:1190px}
+.hero-text-only > div{max-width:850px;margin-inline:auto;text-align:center}
+.hero-text-only .eyebrow{justify-content:center}
+.hero-text-only h1{max-width:none}
+.hero-text-only .hero-subtitle{max-width:680px;margin:0 auto}
+.hero-text-only .hero-cta{justify-content:center}
+.hero-text-only .role-line{text-align:center}
+@media(max-width:700px){.hero-text-only > div{text-align:left}.hero-text-only .eyebrow{justify-content:flex-start}.hero-text-only .hero-subtitle{margin:0}.hero-text-only .hero-cta{justify-content:flex-start}.hero-text-only .role-line{text-align:left}}
