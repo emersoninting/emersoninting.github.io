@@ -109,3 +109,17 @@ body{background:var(--bg);color:var(--ink);font-size:15.5px;line-height:1.7;-web
 .portrait-column .hero-aside .aside-kicker{padding-bottom:12px}
 @media(max-width:1000px){.portrait-column{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(280px,1.2fr);align-items:stretch}.profile-portrait{min-height:100%;align-items:end}.portrait-column .hero-aside{max-width:none}}
 @media(max-width:700px){.portrait-column{display:flex;flex-direction:column;max-width:500px}.profile-portrait{min-height:240px}.portrait-column .hero-aside{padding:22px 25px}}
+
+
+/* Hero positioning: portrait beside headline, full-width focus below */
+.hero-grid{grid-template-columns:minmax(0,1.45fr) minmax(240px,.62fr);gap:clamp(32px,5vw,85px);align-items:center}
+.hero-portrait{width:100%;min-height:0;max-width:370px;justify-self:end;align-self:center;padding:20px 20px 0;aspect-ratio:4/4.2;display:flex;align-items:end}
+.hero-portrait img{width:100%;max-width:none;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center top}
+.hero-focus-strip{display:block;max-width:none;margin-top:52px;padding:21px 28px;border-radius:13px}
+.hero-focus-strip::before{top:20px;height:45px}
+.hero-focus-strip .aside-kicker{padding:0 0 14px;border-bottom:1px solid var(--line)}
+.hero-focus-strip .focus-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.hero-focus-strip .focus-item{padding:18px 0 0;border-bottom:0}
+.hero-focus-strip .focus-item:not(:last-child){border-right:1px solid var(--line);padding-right:20px}
+@media(max-width:1000px){.hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(205px,.8fr);gap:30px}.hero-portrait{max-width:320px}.hero-focus-strip .focus-list{gap:16px}}
+@media(max-width:700px){.hero-grid{grid-template-columns:1fr}.hero-portrait{justify-self:center;max-width:320px;width:100%;aspect-ratio:1/1;margin:14px 0 0}.hero-focus-strip{margin-top:24px}.hero-focus-strip .focus-list{grid-template-columns:1fr;gap:0}.hero-focus-strip .focus-item{padding:14px 0!important;border-right:0!important;border-bottom:1px solid var(--line)}.hero-focus-strip .focus-item:last-child{border-bottom:0}}
