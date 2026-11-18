@@ -123,3 +123,48 @@ body{background:var(--bg);color:var(--ink);font-size:15.5px;line-height:1.7;-web
 .hero-focus-strip .focus-item:not(:last-child){border-right:1px solid var(--line);padding-right:20px}
 @media(max-width:1000px){.hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(205px,.8fr);gap:30px}.hero-portrait{max-width:320px}.hero-focus-strip .focus-list{gap:16px}}
 @media(max-width:700px){.hero-grid{grid-template-columns:1fr}.hero-portrait{justify-self:center;max-width:320px;width:100%;aspect-ratio:1/1;margin:14px 0 0}.hero-focus-strip{margin-top:24px}.hero-focus-strip .focus-list{grid-template-columns:1fr;gap:0}.hero-focus-strip .focus-item{padding:14px 0!important;border-right:0!important;border-bottom:1px solid var(--line)}.hero-focus-strip .focus-item:last-child{border-bottom:0}}
+
+
+/* Hero photo to left of headline — replaces right-side portrait layout */
+.hero-grid.hero-photo-left{
+  grid-template-columns:minmax(220px,.56fr) minmax(0,1.44fr);
+  gap:clamp(32px,5.5vw,85px);
+  align-items:center;
+}
+.hero-photo-left .hero-portrait{
+  grid-column:1;
+  grid-row:1;
+  justify-self:start;
+  width:100%;
+  max-width:350px;
+  aspect-ratio:4/4.2;
+  margin:0;
+}
+.hero-photo-left > div{
+  grid-column:2;
+  grid-row:1;
+  min-width:0;
+}
+@media(max-width:1000px){
+  .hero-grid.hero-photo-left{
+    grid-template-columns:minmax(200px,.75fr) minmax(0,1.25fr);
+    gap:30px;
+  }
+}
+@media(max-width:700px){
+  .hero-grid.hero-photo-left{
+    grid-template-columns:1fr;
+  }
+  .hero-photo-left .hero-portrait{
+    grid-column:1;
+    grid-row:1;
+    width:min(100%,300px);
+    justify-self:start;
+    aspect-ratio:1/1;
+    margin:0 0 10px;
+  }
+  .hero-photo-left > div{
+    grid-column:1;
+    grid-row:2;
+  }
+}
