@@ -112,3 +112,11 @@ body{background:var(--bg);color:var(--ink);font-size:15.5px;line-height:1.7;-web
 @media(max-width:800px){.about-layout{grid-template-columns:1fr;gap:28px}.about-copy h2{margin-bottom:20px}.about-photo{max-width:560px;justify-self:center}}
 @media(max-width:500px){.about-photo{aspect-ratio:4/3;border-radius:12px}.about-description p{font-size:.98rem}}
 @media(prefers-reduced-motion:reduce){.about-photo img{transition:none}}
+
+/* Photo clarity: avoid upscaling the source 260px portrait */
+.about-layout{grid-template-columns:minmax(0,1fr) minmax(220px,280px);gap:clamp(40px,7vw,115px);align-items:center}
+.about-photo{width:min(100%,280px);max-width:280px;justify-self:end;aspect-ratio:4/3}
+.about-photo img{image-rendering:auto;transform:translateZ(0);backface-visibility:hidden;object-position:center 24%}
+.about-photo:hover img{transform:translateZ(0) scale(1.02)}
+@media(max-width:800px){.about-layout{grid-template-columns:1fr;gap:27px}.about-photo{justify-self:center;max-width:280px}}
+@media(max-width:500px){.about-photo{width:min(100%,280px)}}
