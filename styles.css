@@ -98,3 +98,14 @@ body{background:var(--bg);color:var(--ink);font-size:15.5px;line-height:1.7;-web
 @media(max-width:700px){html{scroll-padding-top:135px}.container{width:calc(100% - 36px)}.site-header{position:relative}.nav{gap:15px;padding:14px 0;min-height:unset}.nav-links{gap:9px 17px}.nav-links a{font-size:.79rem}.hero{padding:68px 0 72px}.hero::before{opacity:.15}.hero h1{font-size:clamp(2.65rem,10vw,3.65rem)}.hero-subtitle{font-size:1rem}.hero-aside{padding:23px 26px}.section{padding:66px 0}.section h2{font-size:2rem}.grid{gap:15px}.card{min-height:220px;padding:24px}.note-group{padding:22px}.contact-panel{padding:30px 23px;border-radius:15px}.contact-actions{align-items:stretch}.contact-actions .btn{flex:1 1 170px}.site-footer{padding:25px 0}}
 @media(max-width:390px){.hero h1{font-size:2.45rem}.nav-links{column-gap:13px}.btn{padding:12px 17px}}
 @media(prefers-reduced-motion:reduce){.nav-links a::after,.card::before{transition:none}}
+
+/* Portrait in the homepage hero */
+.portrait-column{display:flex;flex-direction:column;gap:22px;align-items:stretch;min-width:0}
+.profile-portrait{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;width:100%;min-height:265px;margin:0;padding:18px 18px 0;border-radius:18px;background:linear-gradient(135deg,#e4eff4,#fdfefe 70%);border:1px solid #dae6eb;box-shadow:0 18px 48px rgba(15,63,78,.095)}
+.profile-portrait::after{content:"";position:absolute;inset:12px;border:1px solid rgba(18,98,130,.14);border-radius:12px;pointer-events:none}
+.profile-portrait img{display:block;width:min(100%,260px);height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center top;border-radius:11px 11px 0 0;box-shadow:0 4px 22px rgba(15,45,68,.08)}
+.portrait-column .hero-aside{width:100%;padding:22px 27px}
+.portrait-column .hero-aside .focus-item{padding:14px 0}
+.portrait-column .hero-aside .aside-kicker{padding-bottom:12px}
+@media(max-width:1000px){.portrait-column{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(280px,1.2fr);align-items:stretch}.profile-portrait{min-height:100%;align-items:end}.portrait-column .hero-aside{max-width:none}}
+@media(max-width:700px){.portrait-column{display:flex;flex-direction:column;max-width:500px}.profile-portrait{min-height:240px}.portrait-column .hero-aside{padding:22px 25px}}
